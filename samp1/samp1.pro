@@ -1,5 +1,5 @@
 QT += core gui widgets
-TARGET = unit1
+TARGET = samp1
 TEMPLATE = app
 
 CONFIG += debug

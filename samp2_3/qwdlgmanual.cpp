@@ -1,6 +1,8 @@
 ﻿#include <QHBoxLayout>
 #include "qwdlgmanual.h"
 
+#pragma execution_character_set("utf-8")
+
 QWDlgManual::QWDlgManual(QWidget *parent)
     : QDialog(parent)
 {
@@ -101,5 +103,12 @@ void QWDlgManual::on_chkBoxBold(bool checked)
 // 设置字体颜色
 void QWDlgManual::setTextFontColor()
 {
-
+    QPalette pal = txtEdit->palette();
+    if(rBtnRed->isChecked())
+        pal.setColor(QPalette::Text, Qt::red);
+    else if(rBtnBlue->isChecked())
+        pal.setColor(QPalette::Text, Qt::blue);
+    else if(rBtnBlack->isChecked())
+        pal.setColor(QPalette::Text, Qt::black);
+    txtEdit->setPalette(pal);
 }

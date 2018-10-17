@@ -4,9 +4,9 @@
 QWDlgManual::QWDlgManual(QWidget *parent)
     : QDialog(parent)
 {
-    initUI();
+    iniUI();
     initSignalSlots();
-    setWindowTitle(u8("感谢各位水友"));
+    setWindowTitle(tr("感谢各位水友"));
 }
 
 QWDlgManual::~QWDlgManual()
@@ -51,14 +51,29 @@ void QWDlgManual::iniUI()
     font.setPointSize(20);
     txtEdit->setFont(font);
 
-    //
-
+    //布局
+    QVBoxLayout *Vlay = new QVBoxLayout;
+    Vlay->addLayout(HLay1);
+    Vlay->addLayout(HLay2);
+    Vlay->addWidget(txtEdit);
+    Vlay->addLayout(HLay3);
+    setLayout(Vlay);
 }
 
 // 初始化信号跟槽
 void QWDlgManual::initSignalSlots()
 {
+    connect(rBtnBlue, &QRadioButton::clicked, this, &QWDlgManual::setTextFontColor);
+    connect(rBtnRed, &QRadioButton::clicked, this, &QWDlgManual::setTextFontColor);
+    connect(rBtnBlack, &QRadioButton::clicked, this, &QWDlgManual::setTextFontColor);
 
+    connect(chkBoxUnder, &QCheckBox::clicked, this, &QWDlgManual::on_chkBoxUnder);
+    connect(chkBoxItalic, &QCheckBox::clicked, this, &QWDlgManual::on_chkBoxItalic);
+    connect(chkBoxBold, &QCheckBox::clicked, this, &QWDlgManual::on_chkBoxBold);
+
+    connect(btnOK, &QPushButton::clicked, this, &QWDlgManual::accept);
+    connect(btnCancel, &QPushButton::clicked, this, &QWDlgManual::reject);
+    connect(btnClose, &QPushButton::clicked, this, &QWDlgManual::close);
 }
 
 // 设置字体格式

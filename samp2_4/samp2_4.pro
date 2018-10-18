@@ -32,3 +32,5 @@ FORMS    += qwmainwind.ui
 
 RESOURCES += \
     res.qrc
+
+RC_ICONS = AppIco.ico

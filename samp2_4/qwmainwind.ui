@@ -6,170 +6,17 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>526</width>
-    <height>506</height>
+    <width>572</width>
+    <height>407</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>QWMainWind</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <layout class="QFormLayout" name="formLayout">
-    <item row="0" column="0">
-     <widget class="QSplitter" name="splitter">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-      <widget class="QLabel" name="label_2">
-       <property name="enabled">
-        <bool>true</bool>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>32</width>
-         <height>32</height>
-        </size>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap resource="res.qrc">:/images/images/new_file.png</pixmap>
-       </property>
-      </widget>
-      <widget class="QLabel" name="actOpen_2">
-       <property name="maximumSize">
-        <size>
-         <width>32</width>
-         <height>32</height>
-        </size>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap resource="res.qrc">:/images/images/file_open.png</pixmap>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label">
-       <property name="maximumSize">
-        <size>
-         <width>32</width>
-         <height>32</height>
-        </size>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap resource="res.qrc">:/images/images/clear.png</pixmap>
-       </property>
-      </widget>
-      <widget class="Line" name="line_2">
-       <property name="orientation">
-        <enum>Qt::Vertical</enum>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_6">
-       <property name="maximumSize">
-        <size>
-         <width>32</width>
-         <height>32</height>
-        </size>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap resource="res.qrc">:/images/images/cut.png</pixmap>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_7">
-       <property name="maximumSize">
-        <size>
-         <width>32</width>
-         <height>32</height>
-        </size>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap resource="res.qrc">:/images/images/paste.png</pixmap>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_8">
-       <property name="maximumSize">
-        <size>
-         <width>32</width>
-         <height>32</height>
-        </size>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap resource="res.qrc">:/images/images/copy.png</pixmap>
-       </property>
-      </widget>
-      <widget class="Line" name="line_3">
-       <property name="orientation">
-        <enum>Qt::Vertical</enum>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_11">
-       <property name="maximumSize">
-        <size>
-         <width>32</width>
-         <height>32</height>
-        </size>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap resource="res.qrc">:/images/images/text_italic.png</pixmap>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_10">
-       <property name="maximumSize">
-        <size>
-         <width>32</width>
-         <height>32</height>
-        </size>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap resource="res.qrc">:/images/images/text_bold.png</pixmap>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_9">
-       <property name="maximumSize">
-        <size>
-         <width>32</width>
-         <height>32</height>
-        </size>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap resource="res.qrc">:/images/images/text_underline.png</pixmap>
-       </property>
-      </widget>
-     </widget>
-    </item>
+   <layout class="QGridLayout" name="gridLayout">
     <item row="1" column="0">
-     <widget class="Line" name="line_5">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="0" colspan="2">
-     <widget class="QTextEdit" name="textEdit"/>
+     <widget class="QTextEdit" name="txtEdit"/>
     </item>
    </layout>
   </widget>
@@ -178,8 +25,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>526</width>
-     <height>26</height>
+     <width>572</width>
+     <height>23</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu">
@@ -228,6 +75,18 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
+   <addaction name="actNew"/>
+   <addaction name="actOpen"/>
+   <addaction name="actClear"/>
+   <addaction name="separator"/>
+   <addaction name="actCut"/>
+   <addaction name="actCopy"/>
+   <addaction name="actPaste"/>
+   <addaction name="separator"/>
+   <addaction name="actFontItalic"/>
+   <addaction name="actFontBold"/>
+   <addaction name="actFontUnder"/>
+   <addaction name="separator"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actOpen">
@@ -397,5 +256,86 @@
  <resources>
   <include location="res.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>actPaste</sender>
+   <signal>triggered()</signal>
+   <receiver>txtEdit</receiver>
+   <slot>paste()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>285</x>
+     <y>220</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actClear</sender>
+   <signal>triggered()</signal>
+   <receiver>txtEdit</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>285</x>
+     <y>220</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actExit</sender>
+   <signal>triggered()</signal>
+   <receiver>QWMainWind</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>285</x>
+     <y>203</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actCopy</sender>
+   <signal>triggered()</signal>
+   <receiver>txtEdit</receiver>
+   <slot>copy()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>285</x>
+     <y>220</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actCut</sender>
+   <signal>triggered()</signal>
+   <receiver>txtEdit</receiver>
+   <slot>cut()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>285</x>
+     <y>220</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

@@ -1,6 +1,6 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2018-10-16T15:47:11
+# Project created by QtCreator 2018-10-17T14:15:13
 #
 #-------------------------------------------------
 
@@ -8,7 +8,7 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = samp2_3
+TARGET = samp2_4
 TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use
@@ -22,10 +22,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
-#解决乱码问题
-#msvc:QMAKE_CXXFLAGS += -execution-charset:utf-8
 
 SOURCES += main.cpp\
-        qwdlgmanual.cpp
+        qwmainwind.cpp
 
-HEADERS  += qwdlgmanual.h
+HEADERS  += qwmainwind.h
+
+FORMS    += qwmainwind.ui
+
+RESOURCES += \
+    res.qrc

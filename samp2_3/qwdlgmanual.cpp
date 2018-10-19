@@ -1,8 +1,6 @@
 ﻿#include <QHBoxLayout>
 #include "qwdlgmanual.h"
 
-#pragma execution_character_set("utf-8")
-
 QWDlgManual::QWDlgManual(QWidget *parent)
     : QDialog(parent)
 {

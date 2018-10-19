@@ -22,7 +22,7 @@ void QWMainWind::iniUI()
     // 状态栏增加组件
     fLabCurFile = new QLabel;
     fLabCurFile->setMinimumWidth(150);
-    fLabCurFile->setText(u8"当前文件");
+    fLabCurFile->setText(tr("当前文件"));
     ui->statusBar->addWidget(fLabCurFile);
 
     progressBar1 = new QProgressBar;

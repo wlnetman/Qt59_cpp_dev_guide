@@ -132,6 +132,35 @@ void c3_4()
         qDebug()<< new_i.next();
     }
 
+    // STL类型迭代器
+    aList<< "迭代器" << "JAVA" << "STL";
+    QList<QString>::const_iterator ci;
+    for( ci = aList.begin(); ci != aList.end(); ++ci){
+        qDebug() << *ci;
+    }
+    auto ai = aList.rbegin();
+    for( ; ai != aList.rend(); ++ai){
+        qDebug() << *ai;
+    }
+
+    QMultiMap<QString,int> map1, map2, map3;
+    map1.insert("大师", 18);
+    map1.insert("大师", 30);
+    map2.insert("大师", 100);
+    map3 = map1 + map2;
+    QMultiMap<QString,int>::const_iterator map_it;
+    for( map_it = map3.constBegin(); map_it != map3.constEnd(); ++map_it){
+        qDebug()<< map_it.key() << ":" << map_it.value();
+    }
+
+    QString str;
+    foreach( str, aList)
+        qDebug() << str;
+
+    foreach ( const QString &str, map3.uniqueKeys()){
+        foreach( int i, map3.values(str))
+            qDebug() << str << ":" << i;
+    }
 }
 
 int main(int argc, char *argv[])

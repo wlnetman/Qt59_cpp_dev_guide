@@ -26,6 +26,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #msvc:QMAKE_CXXFLAGS += -execution-charset:utf-8
 CONFIG += utf8_source
 
+RC_ICONS = AppIco.ico
+
 SOURCES += main.cpp \ 
     mainwindow.cpp
 

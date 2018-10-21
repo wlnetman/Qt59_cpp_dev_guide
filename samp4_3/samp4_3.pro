@@ -8,7 +8,7 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = samp4_2
+TARGET = samp4_3
 TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use
@@ -29,11 +29,11 @@ CONFIG += utf8_source
 RC_ICONS = AppIco.ico
 
 SOURCES += main.cpp \
-    testqstring.cpp
+    testspinbox.cpp
 
 FORMS += \
-    testqstring.ui
+    testspinbox.ui
 
 HEADERS += \
-    testqstring.h
+    testspinbox.h
 

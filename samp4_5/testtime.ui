@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>13</x>
@@ -45,8 +45,8 @@
          <layout class="QVBoxLayout" name="verticalLayout_2" stretch="1,3">
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_2">
-            <item>
-             <widget class="QPushButton" name="pushButton_2">
+            <item alignment="Qt::AlignHCenter">
+             <widget class="QPushButton" name="btnTimeNow">
               <property name="text">
                <string>读取当前日期时间</string>
               </property>
@@ -67,9 +67,9 @@
              <enum>QLayout::SetDefaultConstraint</enum>
             </property>
             <item row="0" column="1">
-             <widget class="QSpinBox" name="spinBox"/>
+             <widget class="QSpinBox" name="spinTime"/>
             </item>
-            <item row="1" column="0">
+            <item row="1" column="0" alignment="Qt::AlignHCenter">
              <widget class="QLabel" name="label_2">
               <property name="text">
                <string>日期</string>
@@ -84,16 +84,22 @@
              </widget>
             </item>
             <item row="0" column="2">
-             <widget class="QLineEdit" name="lineEdit"/>
+             <widget class="QLineEdit" name="edSetTime"/>
             </item>
-            <item row="0" column="0">
+            <item row="0" column="0" alignment="Qt::AlignHCenter">
              <widget class="QLabel" name="label">
+              <property name="maximumSize">
+               <size>
+                <width>60</width>
+                <height>16777215</height>
+               </size>
+              </property>
               <property name="text">
                <string>时间</string>
               </property>
              </widget>
             </item>
-            <item row="2" column="0">
+            <item row="2" column="0" alignment="Qt::AlignHCenter">
              <widget class="QLabel" name="label_3">
               <property name="text">
                <string>时间日期</string>
@@ -101,20 +107,26 @@
              </widget>
             </item>
             <item row="1" column="1">
-             <widget class="QComboBox" name="comboBox">
+             <widget class="QComboBox" name="cbDate">
               <property name="editable">
                <bool>true</bool>
+              </property>
+              <property name="insertPolicy">
+               <enum>QComboBox::InsertAtTop</enum>
+              </property>
+              <property name="duplicatesEnabled">
+               <bool>false</bool>
               </property>
              </widget>
             </item>
             <item row="2" column="1">
-             <widget class="QSpinBox" name="spinBox_2"/>
+             <widget class="QSpinBox" name="spinDateTime"/>
             </item>
             <item row="1" column="2">
-             <widget class="QLineEdit" name="lineEdit_3"/>
+             <widget class="QLineEdit" name="edSetDate"/>
             </item>
             <item row="2" column="2">
-             <widget class="QLineEdit" name="lineEdit_4"/>
+             <widget class="QLineEdit" name="edSetDateTime"/>
             </item>
             <item row="1" column="3">
              <widget class="QPushButton" name="pushButton_7">
@@ -166,20 +178,23 @@
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_3">
             <item>
-             <widget class="QPushButton" name="pushButton_3">
+             <widget class="QPushButton" name="btStart">
               <property name="text">
                <string>开始</string>
               </property>
              </widget>
             </item>
             <item>
-             <widget class="QPushButton" name="pushButton_4">
+             <widget class="QPushButton" name="btStop">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
               <property name="text">
                <string>停止</string>
               </property>
              </widget>
             </item>
-            <item>
+            <item alignment="Qt::AlignHCenter">
              <widget class="QLabel" name="label_5">
               <property name="text">
                <string>计时</string>
@@ -192,13 +207,19 @@
            <layout class="QHBoxLayout" name="horizontalLayout_4">
             <item>
              <widget class="QLabel" name="label_6">
+              <property name="maximumSize">
+               <size>
+                <width>80</width>
+                <height>16777215</height>
+               </size>
+              </property>
               <property name="text">
                <string>定时周期</string>
               </property>
              </widget>
             </item>
             <item>
-             <widget class="QSpinBox" name="spinBox_3">
+             <widget class="QSpinBox" name="spinInter">
               <property name="suffix">
                <string> ms</string>
               </property>
@@ -208,7 +229,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QPushButton" name="pushButton_5">
+             <widget class="QPushButton" name="btnSetInter">
               <property name="text">
                <string>设置周期</string>
               </property>
@@ -231,8 +252,11 @@
           </item>
           <item>
            <widget class="QProgressBar" name="progressBar">
+            <property name="maximum">
+             <number>65535</number>
+            </property>
             <property name="value">
-             <number>24</number>
+             <number>1024</number>
             </property>
            </widget>
           </item>
@@ -268,7 +292,7 @@
           </layout>
          </item>
          <item>
-          <widget class="QCalendarWidget" name="calendarWidget"/>
+          <widget class="QCalendarWidget" name="calendar"/>
          </item>
         </layout>
        </widget>
@@ -287,7 +311,7 @@
        </spacer>
       </item>
       <item alignment="Qt::AlignHCenter">
-       <widget class="QPushButton" name="pushButton_6">
+       <widget class="QPushButton" name="btnExit">
         <property name="text">
          <string>退出</string>
         </property>
@@ -312,5 +336,22 @@
   </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>btnExit</sender>
+   <signal>clicked()</signal>
+   <receiver>TestTime</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>766</x>
+     <y>381</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>514</x>
+     <y>226</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

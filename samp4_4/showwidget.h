@@ -15,6 +15,9 @@ public:
     explicit ShowWidget(QWidget *parent = nullptr);
     ~ShowWidget();
 
+private slots:
+    void on_SliderRed_valueChanged(int value);
+
 private:
     Ui::ShowWidget *ui;
 };

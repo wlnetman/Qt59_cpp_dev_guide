@@ -26,8 +26,8 @@
          <rect>
           <x>280</x>
           <y>20</y>
-          <width>141</width>
-          <height>111</height>
+          <width>151</width>
+          <height>121</height>
          </rect>
         </property>
        </widget>
@@ -37,7 +37,7 @@
           <x>20</x>
           <y>20</y>
           <width>251</width>
-          <height>116</height>
+          <height>119</height>
          </rect>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout">
@@ -60,7 +60,10 @@
             </widget>
            </item>
            <item>
-            <widget class="QSlider" name="horizontalSlider">
+            <widget class="QSlider" name="SliderRed">
+             <property name="maximum">
+              <number>255</number>
+             </property>
              <property name="orientation">
               <enum>Qt::Horizontal</enum>
              </property>
@@ -87,7 +90,10 @@
             </widget>
            </item>
            <item>
-            <widget class="QSlider" name="horizontalSlider_2">
+            <widget class="QSlider" name="SliderGreen">
+             <property name="maximum">
+              <number>255</number>
+             </property>
              <property name="orientation">
               <enum>Qt::Horizontal</enum>
              </property>
@@ -114,7 +120,13 @@
             </widget>
            </item>
            <item>
-            <widget class="QSlider" name="horizontalSlider_3">
+            <widget class="QSlider" name="SliderBlue">
+             <property name="maximum">
+              <number>255</number>
+             </property>
+             <property name="value">
+              <number>120</number>
+             </property>
              <property name="orientation">
               <enum>Qt::Horizontal</enum>
              </property>
@@ -141,7 +153,13 @@
             </widget>
            </item>
            <item>
-            <widget class="QSlider" name="horizontalSlider_4">
+            <widget class="QSlider" name="SliderAphla">
+             <property name="maximum">
+              <number>255</number>
+             </property>
+             <property name="value">
+              <number>120</number>
+             </property>
              <property name="orientation">
               <enum>Qt::Horizontal</enum>
              </property>
@@ -158,53 +176,47 @@
        <property name="title">
         <string>水平</string>
        </property>
-       <widget class="QSlider" name="horizontalSlider_5">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>30</y>
-          <width>391</width>
-          <height>31</height>
-         </rect>
-        </property>
-        <property name="value">
-         <number>14</number>
-        </property>
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="tickPosition">
-         <enum>QSlider::TicksAbove</enum>
-        </property>
-       </widget>
-       <widget class="QScrollBar" name="horizontalScrollBar">
+       <widget class="QWidget" name="layoutWidget">
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>80</y>
-          <width>391</width>
-          <height>16</height>
+          <y>20</y>
+          <width>431</width>
+          <height>121</height>
          </rect>
         </property>
-        <property name="value">
-         <number>17</number>
-        </property>
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-       </widget>
-       <widget class="QProgressBar" name="progressBar">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>120</y>
-          <width>391</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="value">
-         <number>10</number>
-        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_6">
+         <item>
+          <widget class="QSlider" name="horizontalSlider_5">
+           <property name="value">
+            <number>14</number>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="tickPosition">
+            <enum>QSlider::TicksAbove</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QScrollBar" name="horizontalScrollBar">
+           <property name="value">
+            <number>17</number>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QProgressBar" name="progressBar">
+           <property name="value">
+            <number>10</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </widget>
       </widget>
      </item>
@@ -224,7 +236,11 @@
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_7" stretch="1,1,0">
          <item>
-          <widget class="QDial" name="dial"/>
+          <widget class="QDial" name="dialLeft">
+           <property name="maximum">
+            <number>255</number>
+           </property>
+          </widget>
          </item>
          <item>
           <widget class="QLCDNumber" name="lcdNumber">
@@ -241,7 +257,7 @@
             <enum>QLCDNumber::Filled</enum>
            </property>
            <property name="value" stdset="0">
-            <double>15.000000000000000</double>
+            <double>188.000000000000000</double>
            </property>
           </widget>
          </item>
@@ -261,34 +277,34 @@
              <rect>
               <x>10</x>
               <y>31</y>
-              <width>73</width>
+              <width>89</width>
               <height>131</height>
              </rect>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_2">
              <item>
-              <widget class="QRadioButton" name="radioButton">
+              <widget class="QRadioButton" name="rBtnDec">
                <property name="text">
                 <string>十进制</string>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QRadioButton" name="radioButton_2">
+              <widget class="QRadioButton" name="rBtnBin">
                <property name="text">
                 <string>二进制</string>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QRadioButton" name="radioButton_3">
+              <widget class="QRadioButton" name="rBtnOct">
                <property name="text">
                 <string>八进制</string>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QRadioButton" name="radioButton_4">
+              <widget class="QRadioButton" name="rBtnHex">
                <property name="text">
                 <string>十六进制</string>
                </property>
@@ -384,7 +400,7 @@
       </spacer>
      </item>
      <item alignment="Qt::AlignHCenter">
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="btnClose">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
@@ -435,5 +451,102 @@
  <resources>
   <include location="../samp2_4/res.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>btnClose</sender>
+   <signal>clicked()</signal>
+   <receiver>ShowWidget</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>526</x>
+     <y>424</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>296</x>
+     <y>276</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>dialLeft</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>lcdNumber</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>99</x>
+     <y>436</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>260</x>
+     <y>436</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rBtnDec</sender>
+   <signal>clicked()</signal>
+   <receiver>lcdNumber</receiver>
+   <slot>setDecMode()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>398</x>
+     <y>389</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>260</x>
+     <y>436</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rBtnBin</sender>
+   <signal>clicked()</signal>
+   <receiver>lcdNumber</receiver>
+   <slot>setBinMode()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>398</x>
+     <y>421</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>260</x>
+     <y>436</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rBtnOct</sender>
+   <signal>clicked()</signal>
+   <receiver>lcdNumber</receiver>
+   <slot>setOctMode()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>398</x>
+     <y>453</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>260</x>
+     <y>436</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rBtnHex</sender>
+   <signal>clicked()</signal>
+   <receiver>lcdNumber</receiver>
+   <slot>setHexMode()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>398</x>
+     <y>485</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>260</x>
+     <y>436</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

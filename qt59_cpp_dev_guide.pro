@@ -9,5 +9,6 @@ SUBDIRS = samp1 \
     samp3_2 \
     samp4_1 \
     samp4_2 \
-    samp4_3
+    samp4_3 \
+    samp4_4
 

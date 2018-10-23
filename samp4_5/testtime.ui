@@ -24,7 +24,7 @@
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout" stretch="9,6">
     <item>
-     <layout class="QVBoxLayout" name="verticalLayout_5">
+     <layout class="QVBoxLayout" name="verticalLayout_5" stretch="1,1">
       <item>
        <widget class="QGroupBox" name="gBoxTime">
         <property name="title">
@@ -66,9 +66,6 @@
             <property name="sizeConstraint">
              <enum>QLayout::SetDefaultConstraint</enum>
             </property>
-            <item row="0" column="1">
-             <widget class="QSpinBox" name="spinTime"/>
-            </item>
             <item row="1" column="0" alignment="Qt::AlignHCenter">
              <widget class="QLabel" name="label_2">
               <property name="text">
@@ -106,22 +103,6 @@
               </property>
              </widget>
             </item>
-            <item row="1" column="1">
-             <widget class="QComboBox" name="cbDate">
-              <property name="editable">
-               <bool>true</bool>
-              </property>
-              <property name="insertPolicy">
-               <enum>QComboBox::InsertAtTop</enum>
-              </property>
-              <property name="duplicatesEnabled">
-               <bool>false</bool>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="1">
-             <widget class="QSpinBox" name="spinDateTime"/>
-            </item>
             <item row="1" column="2">
              <widget class="QLineEdit" name="edSetDate"/>
             </item>
@@ -139,6 +120,27 @@
              <widget class="QPushButton" name="pushButton_8">
               <property name="text">
                <string>设置时间日期</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QTimeEdit" name="spinTime">
+              <property name="displayFormat">
+               <string>HH:mm:ss</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QDateEdit" name="dateEdit">
+              <property name="displayFormat">
+               <string>yyyy年MM月d日</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QDateTimeEdit" name="dateTimeEdit">
+              <property name="displayFormat">
+               <string>yyyy年MM月d日 HH:mm:ss</string>
               </property>
              </widget>
             </item>
@@ -176,7 +178,7 @@
            <enum>QLayout::SetDefaultConstraint</enum>
           </property>
           <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_3">
+           <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="1,1,2">
             <item>
              <widget class="QPushButton" name="btStart">
               <property name="text">
@@ -195,7 +197,7 @@
              </widget>
             </item>
             <item alignment="Qt::AlignHCenter">
-             <widget class="QLabel" name="label_5">
+             <widget class="QLabel" name="labTimer">
               <property name="text">
                <string>计时</string>
               </property>
@@ -240,13 +242,13 @@
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_5">
             <item>
-             <widget class="QLCDNumber" name="lcdNumber"/>
+             <widget class="QLCDNumber" name="lcdHour"/>
             </item>
             <item>
-             <widget class="QLCDNumber" name="lcdNumber_2"/>
+             <widget class="QLCDNumber" name="lcdMuite"/>
             </item>
             <item>
-             <widget class="QLCDNumber" name="lcdNumber_3"/>
+             <widget class="QLCDNumber" name="lcdSecond"/>
             </item>
            </layout>
           </item>

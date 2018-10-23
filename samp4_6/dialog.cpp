@@ -35,3 +35,33 @@ void Dialog::on_btnIni2_clicked()
     foreach (const QString& str, city_zone.keys())
         ui->comboBox_2->addItem(str, city_zone.value(str));
 }
+
+void Dialog::on_comboBox_currentIndexChanged(const QString &arg1)
+{
+    ui->plainTextEdit->appendPlainText(arg1);
+}
+
+void Dialog::on_comboBox_2_currentIndexChanged(const QString &arg1)
+{
+    QString zone = ui->comboBox_2->currentData().toString();
+    ui->plainTextEdit->appendPlainText(arg1 + ":区号" + zone);
+}
+
+void Dialog::on_pushButton_3_clicked()
+{
+    QTextDocument *doc = ui->plainTextEdit->document();
+    int cnt = doc->blockCount();
+    QIcon icon(":/imagess/icons/aim.ico");
+    ui->comboBox->clear();
+    for(int i =0 ; i<cnt; ++i){
+        QTextBlock line = doc->findBlockByNumber(i);
+        QString str = line.text();
+        ui->comboBox->addItem(icon, str);
+    }
+}
+
+void Dialog::on_plainTextEdit_customContextMenuRequested(const QPoint &pos)
+{
+    QMenu *menu = ui->plainTextEdit->createStandardContextMenu();
+    menu->exec(pos);
+}

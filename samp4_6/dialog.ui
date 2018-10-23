@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>493</width>
-    <height>379</height>
+    <width>531</width>
+    <height>397</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,20 +20,20 @@
       <widget class="QGroupBox" name="groupBox">
        <property name="minimumSize">
         <size>
-         <width>235</width>
+         <width>250</width>
          <height>0</height>
         </size>
        </property>
        <property name="title">
         <string>简单ComboBox</string>
        </property>
-       <widget class="QWidget" name="">
+       <widget class="QWidget" name="layoutWidget">
         <property name="geometry">
          <rect>
           <x>0</x>
           <y>20</y>
-          <width>261</width>
-          <height>53</height>
+          <width>276</width>
+          <height>61</height>
          </rect>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout">
@@ -47,7 +47,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="pushButton_2">
+            <widget class="QPushButton" name="btnClear1">
              <property name="text">
               <string>清除列表</string>
              </property>
@@ -55,6 +55,12 @@
            </item>
            <item>
             <widget class="QCheckBox" name="checkBox">
+             <property name="minimumSize">
+              <size>
+               <width>72</width>
+               <height>0</height>
+              </size>
+             </property>
              <property name="text">
               <string>可编辑</string>
              </property>
@@ -84,13 +90,13 @@
        <property name="title">
         <string>有用户数据的comboBox</string>
        </property>
-       <widget class="QWidget" name="">
+       <widget class="QWidget" name="layoutWidget">
         <property name="geometry">
          <rect>
           <x>10</x>
           <y>20</y>
           <width>171</width>
-          <height>51</height>
+          <height>58</height>
          </rect>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -137,18 +143,18 @@
        <rect>
         <x>10</x>
         <y>50</y>
-        <width>451</width>
-        <height>201</height>
+        <width>491</width>
+        <height>221</height>
        </rect>
       </property>
      </widget>
-     <widget class="QWidget" name="">
+     <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
         <x>10</x>
         <y>20</y>
-        <width>451</width>
-        <height>25</height>
+        <width>491</width>
+        <height>30</height>
        </rect>
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -160,7 +166,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton_4">
+        <widget class="QPushButton" name="btnClearText">
          <property name="text">
           <string>清除文本内容</string>
          </property>
@@ -182,5 +188,38 @@
  <resources>
   <include location="res.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>btnClear1</sender>
+   <signal>clicked()</signal>
+   <receiver>comboBox</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>160</x>
+     <y>47</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>149</x>
+     <y>80</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnClearText</sender>
+   <signal>clicked()</signal>
+   <receiver>plainTextEdit</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>292</x>
+     <y>144</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>266</x>
+     <y>270</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

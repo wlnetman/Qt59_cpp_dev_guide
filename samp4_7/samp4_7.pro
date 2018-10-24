@@ -37,4 +37,7 @@ FORMS += \
 HEADERS += \
     mainwindow.h
 
+RESOURCES += \
+    res.qrc
+
 

@@ -6,12 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>855</width>
-    <height>406</height>
+    <width>850</width>
+    <height>438</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
+  </property>
+  <property name="toolButtonStyle">
+   <enum>Qt::ToolButtonTextUnderIcon</enum>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QSplitter" name="splitter">
@@ -41,8 +44,8 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>245</width>
-        <height>241</height>
+        <width>257</width>
+        <height>253</height>
        </rect>
       </property>
       <attribute name="label">
@@ -101,8 +104,8 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>245</width>
-        <height>241</height>
+        <width>257</width>
+        <height>253</height>
        </rect>
       </property>
       <attribute name="label">
@@ -114,8 +117,8 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>245</width>
-        <height>241</height>
+        <width>257</width>
+        <height>253</height>
        </rect>
       </property>
       <attribute name="label">
@@ -140,8 +143,21 @@
          <height>191</height>
         </rect>
        </property>
+       <item>
+        <property name="text">
+         <string>New Item</string>
+        </property>
+        <property name="flags">
+         <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>New Item2</string>
+        </property>
+       </item>
       </widget>
-      <widget class="QWidget" name="">
+      <widget class="QWidget" name="layoutWidget">
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -162,7 +178,7 @@
          <widget class="QLineEdit" name="lineEdit"/>
         </item>
         <item>
-         <widget class="QCheckBox" name="checkBox">
+         <widget class="QCheckBox" name="chkBoxListEditable">
           <property name="text">
            <string>可编辑</string>
           </property>
@@ -170,7 +186,7 @@
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="">
+      <widget class="QWidget" name="layoutWidget">
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -252,7 +268,132 @@
    </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actListIni"/>
+   <addaction name="actListClear"/>
+   <addaction name="actListInsert"/>
+   <addaction name="actListAppend"/>
+   <addaction name="actListDelete"/>
+  </widget>
+  <action name="actListIni">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/images/images/Ini.png</normaloff>:/images/images/Ini.png</iconset>
+   </property>
+   <property name="text">
+    <string>初始化列表</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+I</string>
+   </property>
+  </action>
+  <action name="actListClear">
+   <property name="icon">
+    <iconset resource="../samp2_4/res.qrc">
+     <normaloff>:/images/images/clear.png</normaloff>:/images/images/clear.png</iconset>
+   </property>
+   <property name="text">
+    <string>清除列表</string>
+   </property>
+   <property name="toolTip">
+    <string>清除列表</string>
+   </property>
+  </action>
+  <action name="actListInsert">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/images/images/insert.png</normaloff>:/images/images/insert.png</iconset>
+   </property>
+   <property name="text">
+    <string>插入项</string>
+   </property>
+   <property name="toolTip">
+    <string>插入项</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actListDelete">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/images/images/delete.png</normaloff>:/images/images/delete.png</iconset>
+   </property>
+   <property name="text">
+    <string>删除当前项</string>
+   </property>
+   <property name="toolTip">
+    <string>删除当前项</string>
+   </property>
+  </action>
+  <action name="actListAppend">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/images/images/append.png</normaloff>:/images/images/append.png</iconset>
+   </property>
+   <property name="text">
+    <string>添加项</string>
+   </property>
+   <property name="toolTip">
+    <string>添加项目</string>
+   </property>
+  </action>
+  <action name="actListSelAll">
+   <property name="text">
+    <string>全选</string>
+   </property>
+   <property name="toolTip">
+    <string>全选</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+A</string>
+   </property>
+  </action>
+  <action name="actListSelNone">
+   <property name="text">
+    <string>全不选</string>
+   </property>
+   <property name="toolTip">
+    <string>全不选</string>
+   </property>
+  </action>
+  <action name="actListInvs">
+   <property name="text">
+    <string>反选</string>
+   </property>
+   <property name="toolTip">
+    <string>反选</string>
+   </property>
+  </action>
+  <action name="actQuit">
+   <property name="text">
+    <string>退出</string>
+   </property>
+   <property name="toolTip">
+    <string>退出程序</string>
+   </property>
+  </action>
+  <action name="actListPopMenu">
+   <property name="text">
+    <string>项选择</string>
+   </property>
+   <property name="toolTip">
+    <string>项选择</string>
+   </property>
+  </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="../samp2_4/res.qrc"/>
+  <include location="res.qrc"/>
+ </resources>
  <connections/>
 </ui>

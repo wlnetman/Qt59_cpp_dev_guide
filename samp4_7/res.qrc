@@ -6,5 +6,7 @@
         <file>images/append.png</file>
         <file>images/insert.png</file>
         <file>images/check.png</file>
+        <file>images/icons/aim.ico</file>
+        <file>images/icons/ball_blue.ico</file>
     </qresource>
 </RCC>

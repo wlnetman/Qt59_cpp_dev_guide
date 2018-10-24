@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>850</width>
-    <height>438</height>
+    <width>847</width>
+    <height>432</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -22,14 +22,26 @@
      <rect>
       <x>20</x>
       <y>10</y>
-      <width>771</width>
+      <width>811</width>
       <height>331</height>
      </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
     </property>
     <widget class="QToolBox" name="toolBox">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="maximumSize">
       <size>
        <width>16777215</width>
@@ -44,9 +56,15 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>257</width>
-        <height>253</height>
+        <width>317</width>
+        <height>241</height>
        </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
       </property>
       <attribute name="label">
        <string>QListWidget操作</string>
@@ -54,13 +72,20 @@
       <widget class="QWidget" name="gridLayoutWidget">
        <property name="geometry">
         <rect>
-         <x>0</x>
-         <y>10</y>
-         <width>231</width>
-         <height>191</height>
+         <x>10</x>
+         <y>0</y>
+         <width>291</width>
+         <height>241</height>
         </rect>
        </property>
        <layout class="QGridLayout" name="gridLayout">
+        <item row="3" column="0">
+         <widget class="QToolButton" name="tBtnListAppend">
+          <property name="text">
+           <string>tBtnListappend</string>
+          </property>
+         </widget>
+        </item>
         <item row="1" column="0">
          <widget class="QToolButton" name="tBtnListClear">
           <property name="text">
@@ -72,13 +97,6 @@
          <widget class="QToolButton" name="tBtnListINsert">
           <property name="text">
            <string>tBtnListClear</string>
-          </property>
-         </widget>
-        </item>
-        <item row="3" column="0">
-         <widget class="QToolButton" name="tBtnListAppend">
-          <property name="text">
-           <string>tBtnListappend</string>
           </property>
          </widget>
         </item>
@@ -104,8 +122,8 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>257</width>
-        <height>253</height>
+        <width>317</width>
+        <height>241</height>
        </rect>
       </property>
       <attribute name="label">
@@ -117,8 +135,8 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>257</width>
-        <height>253</height>
+        <width>317</width>
+        <height>241</height>
        </rect>
       </property>
       <attribute name="label">
@@ -147,6 +165,10 @@
         <property name="text">
          <string>New Item</string>
         </property>
+        <property name="icon">
+         <iconset resource="res.qrc">
+          <normaloff>:/images/images/check.png</normaloff>:/images/images/check.png</iconset>
+        </property>
         <property name="flags">
          <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
         </property>
@@ -154,6 +176,10 @@
        <item>
         <property name="text">
          <string>New Item2</string>
+        </property>
+        <property name="icon">
+         <iconset resource="res.qrc">
+          <normaloff>:/images/images/icons/ball_blue.ico</normaloff>:/images/images/icons/ball_blue.ico</iconset>
         </property>
        </item>
       </widget>

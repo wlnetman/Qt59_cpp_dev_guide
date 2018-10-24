@@ -17,6 +17,14 @@ public:
 private slots:
     void on_actListIni_triggered();
 
+    void on_actListClear_triggered();
+
+    void on_actListInsert_triggered();
+
+    void on_actListDelete_triggered();
+
+    void on_actListAppend_triggered();
+
 private:
     Ui::MainWindow* ui;
 };

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>847</width>
-    <height>432</height>
+    <width>875</width>
+    <height>471</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -56,8 +56,8 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>317</width>
-        <height>241</height>
+        <width>270</width>
+        <height>253</height>
        </rect>
       </property>
       <property name="sizePolicy">
@@ -74,43 +74,88 @@
         <rect>
          <x>10</x>
          <y>0</y>
-         <width>291</width>
+         <width>241</width>
          <height>241</height>
         </rect>
        </property>
        <layout class="QGridLayout" name="gridLayout">
         <item row="3" column="0">
          <widget class="QToolButton" name="tBtnListAppend">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="text">
            <string>tBtnListappend</string>
+          </property>
+          <property name="toolButtonStyle">
+           <enum>Qt::ToolButtonTextBesideIcon</enum>
           </property>
          </widget>
         </item>
         <item row="1" column="0">
          <widget class="QToolButton" name="tBtnListClear">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="text">
            <string>tBtnListClear</string>
+          </property>
+          <property name="toolButtonStyle">
+           <enum>Qt::ToolButtonTextBesideIcon</enum>
           </property>
          </widget>
         </item>
         <item row="2" column="0">
          <widget class="QToolButton" name="tBtnListINsert">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="text">
            <string>tBtnListClear</string>
+          </property>
+          <property name="toolButtonStyle">
+           <enum>Qt::ToolButtonTextBesideIcon</enum>
           </property>
          </widget>
         </item>
         <item row="0" column="0">
          <widget class="QToolButton" name="tBtnListIni">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="text">
            <string>tBtnListIni</string>
+          </property>
+          <property name="toolButtonStyle">
+           <enum>Qt::ToolButtonTextBesideIcon</enum>
           </property>
          </widget>
         </item>
         <item row="4" column="0">
          <widget class="QToolButton" name="tBtnListDelete">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="text">
            <string>tBtnListDelete</string>
+          </property>
+          <property name="toolButtonStyle">
+           <enum>Qt::ToolButtonTextBesideIcon</enum>
           </property>
          </widget>
         </item>
@@ -122,8 +167,8 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>317</width>
-        <height>241</height>
+        <width>270</width>
+        <height>253</height>
        </rect>
       </property>
       <attribute name="label">
@@ -135,8 +180,8 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>317</width>
-        <height>241</height>
+        <width>270</width>
+        <height>253</height>
        </rect>
       </property>
       <attribute name="label">
@@ -160,6 +205,9 @@
          <width>471</width>
          <height>191</height>
         </rect>
+       </property>
+       <property name="contextMenuPolicy">
+        <enum>Qt::CustomContextMenu</enum>
        </property>
        <item>
         <property name="text">
@@ -201,7 +249,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit"/>
+         <widget class="QLineEdit" name="editCutItemText"/>
         </item>
         <item>
          <widget class="QCheckBox" name="chkBoxListEditable">
@@ -223,32 +271,45 @@
        </property>
        <layout class="QHBoxLayout" name="horizontalLayout_2">
         <item>
-         <widget class="QComboBox" name="tBtnSelectItem">
-          <item>
-           <property name="text">
-            <string>tBtnSelectItem</string>
-           </property>
-          </item>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="pushButton">
+         <widget class="QToolButton" name="tBtnSelectItem">
           <property name="text">
-           <string>tBtnSelAll</string>
+           <string>tBtnSelectItem</string>
+          </property>
+          <property name="popupMode">
+           <enum>QToolButton::MenuButtonPopup</enum>
+          </property>
+          <property name="toolButtonStyle">
+           <enum>Qt::ToolButtonTextBesideIcon</enum>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="pushButton_2">
+         <widget class="QToolButton" name="tBtnSelAll">
+          <property name="text">
+           <string>tBtnSelectAll</string>
+          </property>
+          <property name="toolButtonStyle">
+           <enum>Qt::ToolButtonTextOnly</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QToolButton" name="tBtnSelNone">
           <property name="text">
            <string>tBtnSelNone</string>
           </property>
+          <property name="toolButtonStyle">
+           <enum>Qt::ToolButtonTextOnly</enum>
+          </property>
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="pushButton_3">
+         <widget class="QToolButton" name="tBtnSelInvs">
           <property name="text">
            <string>tBtnSelInvs</string>
+          </property>
+          <property name="toolButtonStyle">
+           <enum>Qt::ToolButtonTextOnly</enum>
           </property>
          </widget>
         </item>
@@ -262,10 +323,10 @@
       <widget class="QTreeWidget" name="treeWidget">
        <property name="geometry">
         <rect>
-         <x>110</x>
-         <y>90</y>
-         <width>121</width>
-         <height>91</height>
+         <x>10</x>
+         <y>100</y>
+         <width>511</width>
+         <height>191</height>
         </rect>
        </property>
        <column>
@@ -282,10 +343,10 @@
       <widget class="QTableWidget" name="tableWidget">
        <property name="geometry">
         <rect>
-         <x>60</x>
-         <y>80</y>
-         <width>311</width>
-         <height>161</height>
+         <x>10</x>
+         <y>70</y>
+         <width>501</width>
+         <height>221</height>
         </rect>
        </property>
       </widget>
@@ -294,7 +355,7 @@
    </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <widget class="QToolBar" name="toolBar">
+  <widget class="QToolBar" name="mainToolBar">
    <property name="windowTitle">
     <string>toolBar</string>
    </property>
@@ -309,6 +370,7 @@
    <addaction name="actListInsert"/>
    <addaction name="actListAppend"/>
    <addaction name="actListDelete"/>
+   <addaction name="separator"/>
   </widget>
   <action name="actListIni">
    <property name="icon">
@@ -373,7 +435,7 @@
     <string>添加项目</string>
    </property>
   </action>
-  <action name="actListSelAll">
+  <action name="actSelAll">
    <property name="text">
     <string>全选</string>
    </property>
@@ -384,7 +446,7 @@
     <string>Ctrl+A</string>
    </property>
   </action>
-  <action name="actListSelNone">
+  <action name="actSelNone">
    <property name="text">
     <string>全不选</string>
    </property>
@@ -392,7 +454,7 @@
     <string>全不选</string>
    </property>
   </action>
-  <action name="actListInvs">
+  <action name="actInvs">
    <property name="text">
     <string>反选</string>
    </property>
@@ -408,12 +470,16 @@
     <string>退出程序</string>
    </property>
   </action>
-  <action name="actListPopMenu">
+  <action name="actSelPopMenu">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/images/images/Ini.png</normaloff>:/images/images/Ini.png</iconset>
+   </property>
    <property name="text">
-    <string>项选择</string>
+    <string>项选项</string>
    </property>
    <property name="toolTip">
-    <string>项选择</string>
+    <string>项选项</string>
    </property>
   </action>
  </widget>

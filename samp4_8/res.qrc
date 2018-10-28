@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>images/addfile.png</file>
+        <file>images/addfloder.png</file>
+        <file>images/delete.png</file>
+        <file>images/Dockvisible.png</file>
+        <file>images/fitH.png</file>
+        <file>images/fitW.png</file>
+        <file>images/pin.png</file>
+        <file>images/quit.png</file>
+        <file>images/scanner.png</file>
+        <file>images/zoom_fit.png</file>
+        <file>images/zoom_in.png</file>
+        <file>images/zoom_out.png</file>
+    </qresource>
+</RCC>

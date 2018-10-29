@@ -12,5 +12,7 @@
         <file>images/zoom_fit.png</file>
         <file>images/zoom_in.png</file>
         <file>images/zoom_out.png</file>
+        <file>images/folder_picture.png</file>
+        <file>images/image.png</file>
     </qresource>
 </RCC>

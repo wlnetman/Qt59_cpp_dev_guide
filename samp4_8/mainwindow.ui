@@ -37,9 +37,9 @@
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <item>
-       <widget class="QLabel" name="label">
+       <widget class="QLabel" name="labPicture">
         <property name="text">
-         <string>TextLabel</string>
+         <string/>
         </property>
        </widget>
       </item>
@@ -53,7 +53,7 @@
      <x>0</x>
      <y>0</y>
      <width>984</width>
-     <height>26</height>
+     <height>23</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu">
@@ -83,8 +83,8 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
-   <addaction name="actAddFloder"/>
-   <addaction name="actAddFile"/>
+   <addaction name="actAddFolder"/>
+   <addaction name="actAddFiles"/>
    <addaction name="actDeleteItem"/>
    <addaction name="actScanItems"/>
    <addaction name="separator"/>
@@ -154,7 +154,7 @@
     </layout>
    </widget>
   </widget>
-  <action name="actAddFloder">
+  <action name="actAddFolder">
    <property name="icon">
     <iconset resource="res.qrc">
      <normaloff>:/images/images/addfloder.png</normaloff>:/images/images/addfloder.png</iconset>
@@ -166,7 +166,7 @@
     <string>添加目录</string>
    </property>
   </action>
-  <action name="actAddFile">
+  <action name="actAddFiles">
    <property name="icon">
     <iconset resource="res.qrc">
      <normaloff>:/images/images/addfile.png</normaloff>:/images/images/addfile.png</iconset>
@@ -300,5 +300,22 @@
   <include location="../samp4_7/res.qrc"/>
   <include location="res.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>actQuit</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>491</x>
+     <y>290</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

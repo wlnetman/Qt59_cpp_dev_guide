@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>789</width>
+    <height>473</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QSplitter" name="splitter_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>761</width>
+      <height>401</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string/>
+     </property>
+     <widget class="QWidget" name="gridLayoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>281</width>
+        <height>381</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="3" column="0">
+        <widget class="QPushButton" name="pushButton_4">
+         <property name="text">
+          <string>插入行</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QPushButton" name="pushButton_5">
+         <property name="text">
+          <string>添加行</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="QPushButton" name="pushButton_8">
+         <property name="text">
+          <string>添加行</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QPushButton" name="pushButton_7">
+         <property name="text">
+          <string>自动调节行高</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="1">
+        <widget class="QCheckBox" name="checkBox_2">
+         <property name="text">
+          <string>间隔行底色</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="0">
+        <widget class="QCheckBox" name="checkBox">
+         <property name="text">
+          <string>表格可编辑</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="1">
+        <widget class="QCheckBox" name="checkBox_4">
+         <property name="text">
+          <string>显示列表头</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="0">
+        <widget class="QCheckBox" name="checkBox_3">
+         <property name="text">
+          <string>显示行表头</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QPushButton" name="pushButton_2">
+         <property name="text">
+          <string>设置行数</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QSpinBox" name="spinBox">
+         <property name="value">
+          <number>7</number>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="0">
+        <widget class="QRadioButton" name="radioButton">
+         <property name="text">
+          <string>行选择</string>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="1">
+        <widget class="QRadioButton" name="radioButton_2">
+         <property name="text">
+          <string>列选择</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0" colspan="2" alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+        <widget class="QPushButton" name="pushButton">
+         <property name="text">
+          <string>设置表头</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0" colspan="2" alignment="Qt::AlignHCenter">
+        <widget class="QPushButton" name="pushButton_3">
+         <property name="text">
+          <string>初始化表格数据</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0" colspan="2" alignment="Qt::AlignHCenter">
+        <widget class="QPushButton" name="pushButton_6">
+         <property name="text">
+          <string>删除当前行</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0" colspan="2" alignment="Qt::AlignHCenter">
+        <widget class="QPushButton" name="pushButton_9">
+         <property name="text">
+          <string>读取表格内容到文本</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+    <widget class="QSplitter" name="splitter">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <widget class="QTableWidget" name="tableWidget"/>
+     <widget class="QPlainTextEdit" name="plainTextEdit"/>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

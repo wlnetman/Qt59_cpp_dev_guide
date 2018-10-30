@@ -6,20 +6,20 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>789</width>
-    <height>473</height>
+    <width>1014</width>
+    <height>466</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QSplitter" name="splitter_2">
+   <widget class="QSplitter" name="splitterMain">
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>20</y>
-      <width>761</width>
+      <width>911</width>
       <height>401</height>
      </rect>
     </property>
@@ -30,25 +30,31 @@
      <property name="title">
       <string/>
      </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
      <widget class="QWidget" name="gridLayoutWidget">
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>10</y>
-        <width>281</width>
-        <height>381</height>
+        <y>40</y>
+        <width>231</width>
+        <height>321</height>
        </rect>
       </property>
-      <layout class="QGridLayout" name="gridLayout">
+      <layout class="QGridLayout" name="gridLayout" rowstretch="1,1,1,1,1,1,1,1,1,1" rowminimumheight="0,0,0,0,0,0,0,0,0,0">
+       <property name="sizeConstraint">
+        <enum>QLayout::SetDefaultConstraint</enum>
+       </property>
        <item row="3" column="0">
-        <widget class="QPushButton" name="pushButton_4">
+        <widget class="QPushButton" name="btnInsertRow">
          <property name="text">
           <string>插入行</string>
          </property>
         </widget>
        </item>
        <item row="3" column="1">
-        <widget class="QPushButton" name="pushButton_5">
+        <widget class="QPushButton" name="btnAppendRow">
          <property name="text">
           <string>添加行</string>
          </property>
@@ -69,7 +75,7 @@
         </widget>
        </item>
        <item row="7" column="1">
-        <widget class="QCheckBox" name="checkBox_2">
+        <widget class="QCheckBox" name="chkBoxRowColor">
          <property name="text">
           <string>间隔行底色</string>
          </property>
@@ -125,21 +131,21 @@
         </widget>
        </item>
        <item row="0" column="0" colspan="2" alignment="Qt::AlignHCenter|Qt::AlignVCenter">
-        <widget class="QPushButton" name="pushButton">
+        <widget class="QPushButton" name="btnSetHeader">
          <property name="text">
           <string>设置表头</string>
          </property>
         </widget>
        </item>
        <item row="2" column="0" colspan="2" alignment="Qt::AlignHCenter">
-        <widget class="QPushButton" name="pushButton_3">
+        <widget class="QPushButton" name="btnIniData">
          <property name="text">
           <string>初始化表格数据</string>
          </property>
         </widget>
        </item>
        <item row="4" column="0" colspan="2" alignment="Qt::AlignHCenter">
-        <widget class="QPushButton" name="pushButton_6">
+        <widget class="QPushButton" name="btnDeleteRow">
          <property name="text">
           <string>删除当前行</string>
          </property>
@@ -159,7 +165,7 @@
      <property name="orientation">
       <enum>Qt::Vertical</enum>
      </property>
-     <widget class="QTableWidget" name="tableWidget"/>
+     <widget class="QTableWidget" name="tableInfo"/>
      <widget class="QPlainTextEdit" name="plainTextEdit"/>
     </widget>
    </widget>

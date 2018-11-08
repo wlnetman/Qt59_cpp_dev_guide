@@ -22,7 +22,7 @@
       </property>
       <widget class="QGroupBox" name="groupBox">
        <property name="title">
-        <string>TableView</string>
+        <string>转成表格形式</string>
        </property>
        <layout class="QHBoxLayout" name="horizontalLayout">
         <item>
@@ -32,9 +32,12 @@
       </widget>
       <widget class="QGroupBox" name="groupBox_2">
        <property name="title">
-        <string>PlainTextEdit</string>
+        <string>原始文本</string>
        </property>
-       <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QComboBox" name="comboBox"/>
+        </item>
         <item>
          <widget class="QPlainTextEdit" name="plainTextEdit"/>
         </item>

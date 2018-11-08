@@ -5,6 +5,10 @@
 #include <QLabel>
 #include <QItemSelectionModel>
 #include <QStandardItemModel>
+#include <QFileDialog>
+#include <QTextStream>
+#include <QList>
+#include <QDebug>
 
 namespace Ui {
 class MainWindow;
@@ -22,6 +26,16 @@ public:
 private slots:
     void on_currentChanged(const QModelIndex &current, const QModelIndex &previous);
 
+    void on_actOpen_triggered();
+
+    void on_actAppend_triggered();
+
+    void on_actInsert_triggered();
+
+    void on_actDelete_triggered();
+
+    void on_actAlignLeft_triggered();
+
 private:
     Ui::MainWindow *ui;
 
@@ -31,7 +45,7 @@ private:
     QStandardItemModel *standModel;
     QItemSelectionModel *selectModel;
 
-    void iniModelFromStringList(QString &);
+    void iniModelFromStringList(QStringList &);
 };
 
 #endif // MAINWINDOW_H

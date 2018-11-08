@@ -25,6 +25,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #解决乱码问题
 #msvc:QMAKE_CXXFLAGS += -execution-charset:utf-8
 CONFIG += utf8_source
+CONFIG += c++11
 
 RC_ICONS = AppIco.ico
 

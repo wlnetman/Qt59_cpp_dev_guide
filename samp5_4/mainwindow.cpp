@@ -16,6 +16,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->tableView->setSelectionMode(QAbstractItemView::ExtendedSelection);
     ui->tableView->setSelectionBehavior(QAbstractItemView::SelectItems);
 
+    ui->tableView->setItemDelegateForColumn(3, &intSpinDelegate);
+
     // 创建状态栏代码
     labCurFile = new QLabel("当前文件：");
     ui->statusbar->addWidget(labCurFile);
@@ -88,7 +90,6 @@ void MainWindow::iniModelFromStringList(QStringList &aFileContext)
         {
             item = new QStandardItem(line.at(j));
             standModel->setItem(i, j, item);
-            qDebug()<< "row:" << i <<"col:"<< j <<" :" << line.at(j);
         }
         //qDebug()<< "line:" <<line.count();
     }
@@ -131,7 +132,7 @@ void MainWindow::on_actAlignLeft_triggered()
     for(int i=1; i<standModel->rowCount(); i++){
         for(int j=0; j<standModel->columnCount(); j++){
             QStandardItem *item = standModel->item(i,j);
-            if( item != nullptr)
+            if(item != nullptr)
                 item->setTextAlignment(Qt::AlignLeft);
         }
     }

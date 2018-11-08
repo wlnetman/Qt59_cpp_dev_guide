@@ -9,6 +9,7 @@
 #include <QTextStream>
 #include <QList>
 #include <QDebug>
+#include "qwintspindelegate.h"
 
 namespace Ui {
 class MainWindow;
@@ -46,6 +47,8 @@ private:
     QLabel *labCellText;
     QStandardItemModel *standModel;
     QItemSelectionModel *selectModel;
+
+    QWIntSpinDelegate intSpinDelegate; // 整数型spinbox
 
     void iniModelFromStringList(QStringList &);
 };

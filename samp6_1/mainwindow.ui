@@ -128,42 +128,42 @@
            <item>
             <layout class="QGridLayout" name="gridLayout_2">
              <item row="0" column="2">
-              <widget class="QPushButton" name="pushButton_13">
+              <widget class="QPushButton" name="btnWarning">
                <property name="text">
                 <string>warning</string>
                </property>
               </widget>
              </item>
              <item row="0" column="0">
-              <widget class="QPushButton" name="pushButton_7">
+              <widget class="QPushButton" name="btnQuestion">
                <property name="text">
                 <string>question</string>
                </property>
               </widget>
              </item>
              <item row="1" column="1">
-              <widget class="QPushButton" name="pushButton_11">
+              <widget class="QPushButton" name="btnAbout">
                <property name="text">
                 <string>about</string>
                </property>
               </widget>
              </item>
              <item row="1" column="2">
-              <widget class="QPushButton" name="pushButton_12">
+              <widget class="QPushButton" name="btnAboutQt">
                <property name="text">
                 <string>aboutQt</string>
                </property>
               </widget>
              </item>
              <item row="0" column="1">
-              <widget class="QPushButton" name="pushButton_10">
+              <widget class="QPushButton" name="btnInfo">
                <property name="text">
                 <string>information</string>
                </property>
               </widget>
              </item>
              <item row="1" column="0">
-              <widget class="QPushButton" name="pushButton_8">
+              <widget class="QPushButton" name="btnCritical">
                <property name="text">
                 <string>critical</string>
                </property>

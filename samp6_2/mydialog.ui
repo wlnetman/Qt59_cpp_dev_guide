@@ -6,13 +6,34 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>558</width>
+    <height>444</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <widget class="QTableView" name="tableView">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>40</y>
+     <width>381</width>
+     <height>341</height>
+    </rect>
+   </property>
+  </widget>
+  <action name="actionactSetRow">
+   <property name="text">
+    <string>actSetRow</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>

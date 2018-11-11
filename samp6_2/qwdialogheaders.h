@@ -15,6 +15,9 @@ public:
     explicit QWDialogHeaders(QWidget *parent = nullptr);
     ~QWDialogHeaders();
 
+    int rowCount();
+    int columnCount();
+    void setRowColumn(int row, int column);
 private:
     Ui::QWDialogHeaders *ui;
 };

@@ -12,3 +12,8 @@ QWDialogHeaders::~QWDialogHeaders()
 {
     delete ui;
 }
+
+int QWDialogHeaders::rowCount()
+{
+    return ui->
+}

@@ -10,10 +10,23 @@ QWDialogHeaders::QWDialogHeaders(QWidget *parent) :
 
 QWDialogHeaders::~QWDialogHeaders()
 {
+    QMessageBox::information(this, "析构函数", "设置对话框此刻会被删除");
     delete ui;
 }
 
 int QWDialogHeaders::rowCount()
 {
-    return ui->
+    return ui->spinBoxRow->value();
 }
+
+int QWDialogHeaders::columnCount()
+{
+    return ui->spinBoxColumn->value();
+}
+
+void QWDialogHeaders::setRowColumn(int row, int column)
+{
+    ui->spinBoxRow->setValue(row);
+    ui->spinBoxColumn->setValue(column);
+}
+

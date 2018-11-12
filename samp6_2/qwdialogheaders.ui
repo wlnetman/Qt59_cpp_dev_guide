@@ -106,5 +106,38 @@
  <resources>
   <include location="res.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>btnOK</sender>
+   <signal>clicked()</signal>
+   <receiver>QWDialogHeaders</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>295</x>
+     <y>46</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>177</x>
+     <y>73</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnClose</sender>
+   <signal>clicked()</signal>
+   <receiver>QWDialogHeaders</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>295</x>
+     <y>101</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>177</x>
+     <y>73</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

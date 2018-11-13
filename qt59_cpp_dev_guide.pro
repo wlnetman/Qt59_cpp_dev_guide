@@ -22,4 +22,6 @@ SUBDIRS = samp1 \
     samp5_4 \
     samp5_5 \
     samp6_1 \
-    samp6_2
+    samp6_2 \
+    samp6_2a
+

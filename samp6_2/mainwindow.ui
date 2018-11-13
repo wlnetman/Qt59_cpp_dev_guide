@@ -45,6 +45,7 @@
     <bool>false</bool>
    </attribute>
    <addaction name="actionactSetRowAndCol"/>
+   <addaction name="actLocate"/>
    <addaction name="separator"/>
    <addaction name="actExit"/>
   </widget>
@@ -72,9 +73,38 @@
     <string>退出</string>
    </property>
   </action>
+  <action name="actLocate">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/image/images/localrow.png</normaloff>:/image/images/localrow.png</iconset>
+   </property>
+   <property name="text">
+    <string>定位文字</string>
+   </property>
+   <property name="toolTip">
+    <string>定位文字</string>
+   </property>
+  </action>
  </widget>
  <resources>
   <include location="res.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>actExit</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>300</x>
+     <y>235</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

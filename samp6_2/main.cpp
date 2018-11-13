@@ -1,11 +1,11 @@
 ﻿#include <QApplication>
-#include "qwdialogheaders.h"
+#include "mainwindow.h"
 
 int main(int argc, char* argv[])
 {
     QApplication app(argc, argv);
 
-    QWDialogHeaders w;
+    MainWindow w;
     w.show();
 
     return app.exec();

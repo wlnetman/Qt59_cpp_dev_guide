@@ -31,15 +31,18 @@ RC_ICONS = AppIco.ico
 
 SOURCES += main.cpp \
     qwdialogheaders.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    qwdialoglocate.cpp
 
 FORMS += \
     qwdialogheaders.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    qwdialoglocate.ui
 
 HEADERS += \
     qwdialogheaders.h \
-    mainwindow.h
+    mainwindow.h \
+    qwdialoglocate.h
 
 RESOURCES += \
     res.qrc

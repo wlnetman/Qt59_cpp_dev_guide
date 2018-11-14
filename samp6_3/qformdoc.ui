@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>QFormDoc</class>
+ <widget class="QWidget" name="QFormDoc">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QPlainTextEdit" name="plainTextEdit"/>
+   </item>
+  </layout>
+  <action name="actOpen">
+   <property name="text">
+    <string>打开</string>
+   </property>
+  </action>
+  <action name="actCut">
+   <property name="text">
+    <string>剪切</string>
+   </property>
+  </action>
+  <action name="actCopy">
+   <property name="text">
+    <string>复制</string>
+   </property>
+  </action>
+  <action name="actPaster">
+   <property name="text">
+    <string>粘贴</string>
+   </property>
+  </action>
+  <action name="actFont">
+   <property name="text">
+    <string>字体</string>
+   </property>
+  </action>
+  <action name="actClose">
+   <property name="text">
+    <string>关闭</string>
+   </property>
+  </action>
+  <action name="actUndo">
+   <property name="text">
+    <string>撤销</string>
+   </property>
+  </action>
+  <action name="actRepeat">
+   <property name="text">
+    <string>重复</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

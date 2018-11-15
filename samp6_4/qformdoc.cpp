@@ -6,6 +6,8 @@ QFormDoc::QFormDoc(QWidget *parent) :
     ui(new Ui::QFormDoc)
 {
     ui->setupUi(this);
+    setWindowTitle("New Doc");
+    setAttribute(Qt::WA_DeleteOnClose);
 
     QToolBar* locToolBar = new QToolBar("文档", this);
     locToolBar->addAction(ui->actOpen);
@@ -39,7 +41,6 @@ QFormDoc::~QFormDoc()
 
 void QFormDoc::on_actOpen_triggered()
 {
-
     QString curPath = QDir::currentPath();
     QString fileName = QFileDialog::getOpenFileName(this,
          "Open Text", curPath, "Text Files (*.txt *.h *.cpp)");
@@ -63,4 +64,52 @@ void QFormDoc::on_actFont_triggered()
     if( ret ){
         ui->plainTextEdit->setFont(fnew);
     }
+}
+
+void QFormDoc::loadFromFile(QString &filename)
+{
+    if(filename.isEmpty())
+        return;
+
+    ui->plainTextEdit->clear();
+    QFile afile(filename);
+    afile.open(QFile::ReadOnly);
+    QTextStream text(&afile);
+    ui->plainTextEdit->setPlainText(text.readAll());
+    afile.close();
+    current_file_ = filename;
+
+    QFileInfo info(current_file_);
+    QString str = info.fileName();
+    setWindowTitle(str);
+    is_fileopened_ = true;
+}
+
+QString QFormDoc::currentFileName()
+{
+    return current_file_;
+}
+
+void QFormDoc::setEditFont()
+{
+    QFont font = ui->plainTextEdit->font();
+    bool ret = true;
+    QFont newFont = QFontDialog::getFont(&ret, font);
+    if(ret)
+        ui->plainTextEdit->setFont(newFont);
+}
+
+void QFormDoc::textCut()
+{
+    ui->plainTextEdit->cut();
+}
+
+void QFormDoc::textCopy()
+{
+    ui->plainTextEdit->copy();
+}
+
+void QFormDoc::textPaste()
+{
+    ui->plainTextEdit->paste();
 }

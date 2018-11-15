@@ -8,12 +8,9 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    setWindowTitle("多窗口应用程序");
+    setWindowTitle("MDI程序示例");
 
-    ui->tabWidget->setVisible(false);
-    ui->tabWidget->clear();
-    ui->tabWidget->tabsClosable();
-    setCentralWidget(ui->tabWidget);
+    setCentralWidget(ui->mdiArea);
 }
 
 MainWindow::~MainWindow()
@@ -35,22 +32,88 @@ void MainWindow::paintEvent(QPaintEvent *event)
     painter.drawPixmap(left, top, right, bottom ,map);
 }
 
-void MainWindow::on_actWidgetInsite_triggered()
+void MainWindow::on_actDoc_New_triggered()
 {
-    QFormDoc *form = new QFormDoc(this);
-    form->setAttribute(Qt::WA_QuitOnClose);
-    int cur = ui->tabWidget->addTab(form,
-                                    QString::asprintf("Tab %d", ui->tabWidget->count()));
-    ui->tabWidget->setCurrentIndex(cur);
-    ui->tabWidget->setVisible(true);
+    QFormDoc* formDoc = new QFormDoc(this);
+    ui->mdiArea->addSubWindow(formDoc);
+    formDoc->show();
 }
 
-void MainWindow::on_actWidget_triggered()
+void MainWindow::on_actDoc_Open_triggered()
 {
-    QFormDoc *form = new QFormDoc();
-    form->setAttribute(Qt::WA_DeleteOnClose);
-    form->setWindowTitle("独立式Widget，无父窗口，关闭时删除");
-    form->setWindowFlag(Qt::Window, true);
-    form->setWindowOpacity(0.9);
-    form->show();
+    QFormDoc *formDoc;
+    if(ui->mdiArea->subWindowList().count()>0){
+        formDoc = static_cast<QFormDoc*>(ui->mdiArea->activeSubWindow()->widget());
+    } else {
+        formDoc = new QFormDoc();
+        ui->mdiArea->addSubWindow(formDoc);
+    }
+
+    QString cur_path = QDir::currentPath();
+    QString fname = QFileDialog::getOpenFileName(this,
+                    "打开一个文件", cur_path, "文本文件 (*.h,*.cpp);CPP文件(*.txt)");
+    if(fname.isEmpty())
+        return;
+
+    formDoc->loadFromFile(fname);
+    formDoc->show();
+
+    ui->actCopy->setEnabled(true);
+    ui->actCut->setEnabled(true);
+    ui->actPaste->setEnabled(true);
+    ui->actClose->setEnabled(true);
 }
+
+
+void MainWindow::on_actCascade_triggered()
+{
+    ui->mdiArea->cascadeSubWindows();
+}
+
+void MainWindow::on_actTile_triggered()
+{
+    ui->mdiArea->tileSubWindows();
+}
+
+void MainWindow::on_actMdi_triggered(bool checked)
+{
+    if(checked){
+        ui->mdiArea->setViewMode(QMdiArea::TabbedView);
+        ui->mdiArea->setTabsClosable(true);
+        ui->actCascade->setEnabled(false);
+        ui->actTile->setEnabled(false);
+    } else {
+        ui->mdiArea->setViewMode(QMdiArea::SubWindowView);
+        ui->actCascade->setEnabled(true);
+        ui->actTile->setEnabled(true);
+    }
+}
+
+void MainWindow::on_mdiArea_subWindowActivated(QMdiSubWindow *arg1)
+{
+    Q_UNUSED(arg1)
+
+    if(ui->mdiArea->subWindowList().count() == 0) {
+        ui->actCut->setEnabled(false);
+        ui->actCopy->setEnabled(false);
+        ui->actPaste->setEnabled(false);
+        ui->statusbar->clearMessage();
+    } else {
+        QFormDoc* form = static_cast<QFormDoc*>( ui->mdiArea->activeSubWindow()->widget());
+        ui->statusbar->showMessage(form->currentFileName());
+    }
+}
+
+void MainWindow::on_actCopy_triggered()
+{
+    QFormDoc *form = static_cast<QFormDoc*>(ui->mdiArea->activeSubWindow()->widget());
+    form->textCut();
+}
+
+void MainWindow::on_actPaste_triggered()
+{
+    QFormDoc *form = static_cast<QFormDoc*>(ui->mdiArea->activeSubWindow()->widget());
+    form->textPaste();
+}
+
+

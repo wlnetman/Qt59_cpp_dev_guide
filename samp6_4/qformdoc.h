@@ -9,6 +9,8 @@
 #include <QMessageBox>
 #include <QFile>
 #include <QVBoxLayout>
+#include <QFileInfo>
+
 
 namespace Ui {
 class QFormDoc;
@@ -29,6 +31,21 @@ private slots:
 
 private:
     Ui::QFormDoc *ui;
+
+    QString current_file_;
+    bool is_fileopened_;
+
+public:
+    void loadFromFile(QString &filename);
+    QString currentFileName();
+
+public:
+    bool isFileOpened();
+    void setEditFont();
+    void textCut();
+    void textCopy();
+    void textPaste();
+
 };
 
 #endif // QFORMDOC_H

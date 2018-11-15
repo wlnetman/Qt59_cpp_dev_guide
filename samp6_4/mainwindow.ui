@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>638</width>
-    <height>485</height>
+    <width>826</width>
+    <height>549</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -25,7 +25,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>638</width>
+     <width>826</width>
      <height>26</height>
     </rect>
    </property>
@@ -44,36 +44,114 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
-   <addaction name="actWidgetInsite"/>
-   <addaction name="actWidget"/>
+   <addaction name="actDoc_Open"/>
+   <addaction name="actDoc_New"/>
+   <addaction name="actClose"/>
+   <addaction name="separator"/>
+   <addaction name="actCut"/>
+   <addaction name="actCopy"/>
+   <addaction name="actPaste"/>
+   <addaction name="separator"/>
+   <addaction name="actMdi"/>
+   <addaction name="actCascade"/>
+   <addaction name="actTile"/>
   </widget>
-  <action name="actWidgetInsite">
+  <action name="actDoc_Open">
    <property name="icon">
-    <iconset resource="../samp6_3/res.qrc">
-     <normaloff>:/images/images/63_2.png</normaloff>:/images/images/63_2.png</iconset>
+    <iconset resource="res.qrc">
+     <normaloff>:/images/images/64_5.png</normaloff>:/images/images/64_5.png</iconset>
    </property>
    <property name="text">
-    <string>嵌入式Widget</string>
+    <string>打开Doc</string>
    </property>
    <property name="toolTip">
-    <string>嵌入式Widget</string>
+    <string>打开Doc</string>
    </property>
   </action>
-  <action name="actWidget">
+  <action name="actDoc_New">
    <property name="icon">
-    <iconset resource="../samp6_3/res.qrc">
-     <normaloff>:/images/images/63_1.png</normaloff>:/images/images/63_1.png</iconset>
+    <iconset resource="res.qrc">
+     <normaloff>:/images/images/64_6.png</normaloff>:/images/images/64_6.png</iconset>
    </property>
    <property name="text">
-    <string>独立式Widget</string>
+    <string>新建Doc</string>
    </property>
    <property name="toolTip">
-    <string>独立式Widget</string>
+    <string>新建Doc</string>
+   </property>
+  </action>
+  <action name="actClose">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/images/images/64_5.png</normaloff>:/images/images/64_5.png</iconset>
+   </property>
+   <property name="text">
+    <string>全部关闭</string>
+   </property>
+   <property name="toolTip">
+    <string>全部关闭</string>
+   </property>
+  </action>
+  <action name="actCopy">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/images/images/64_3.png</normaloff>:/images/images/64_3.png</iconset>
+   </property>
+   <property name="text">
+    <string>复制</string>
+   </property>
+   <property name="toolTip">
+    <string>复制</string>
+   </property>
+  </action>
+  <action name="actPaste">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/images/images/64_1.png</normaloff>:/images/images/64_1.png</iconset>
+   </property>
+   <property name="text">
+    <string>粘贴</string>
+   </property>
+  </action>
+  <action name="actMdi">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/images/images/64_5.png</normaloff>:/images/images/64_5.png</iconset>
+   </property>
+   <property name="text">
+    <string>MDI模式</string>
+   </property>
+  </action>
+  <action name="actCut">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/images/images/64_2.png</normaloff>:/images/images/64_2.png</iconset>
+   </property>
+   <property name="text">
+    <string>剪切</string>
+   </property>
+  </action>
+  <action name="actCascade">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/images/images/64_5.png</normaloff>:/images/images/64_5.png</iconset>
+   </property>
+   <property name="text">
+    <string>级联展开</string>
+   </property>
+  </action>
+  <action name="actTile">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/images/images/64_5.png</normaloff>:/images/images/64_5.png</iconset>
+   </property>
+   <property name="text">
+    <string>平铺展开</string>
    </property>
   </action>
  </widget>
  <resources>
-  <include location="../samp6_3/res.qrc"/>
+  <include location="res.qrc"/>
  </resources>
  <connections/>
 </ui>

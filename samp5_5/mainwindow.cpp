@@ -11,6 +11,18 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->statusbar->addWidget(lab_status_);
 
     setWindowTitle("有爱的照片批处理工具");
+
+    // 记住上次选择的目录
+    QString path = QDir::currentPath();
+    QString inifile = QString::asprintf("%1_.ini").arg(QApplication::applicationName());
+    QFileInfo info(inifile);
+
+    settings_ = new QSettings(inifile, QSettings::IniFormat);
+    if( !info.exists()){
+        settings_->beginGroup("dir");
+        settings_->setValue("lastdir","");
+        settings_->endGroup();
+    }
 }
 
 MainWindow::~MainWindow()
@@ -18,33 +30,59 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_rbtn1200_clicked()
+QString MainWindow::load_last_dir()
 {
-    ui->edWidth->setText(QString::number(1200));
-    ui->edHeight->setText(QString::number(900));
+    QString str;
+    settings_->beginGroup("dir");
+    str = settings_->value("lastdir").toString();
+    settings_->endGroup();
+    return str;
+}
+
+void MainWindow::save_last_dir(const QString &path)
+{
+    settings_->beginGroup("dir");
+    settings_->setValue("lastdir",path);
+    settings_->endGroup();
 }
 
 void MainWindow::on_rbtn800_clicked()
 {
-    ui->edWidth->setText(QString::number(800));
-    ui->edHeight->setText(QString::number(600));
+    ui->edWidth->setText(QString::number(1024));
+    ui->edHeight->setText(QString::number(1024));
 }
 
 void MainWindow::on_rbtn400_clicked()
 {
-    ui->edWidth->setText(QString::number(400));
-    ui->edHeight->setText(QString::number(300));
+    ui->edWidth->setText(QString::number(750));
+    ui->edHeight->setText(QString::number(750));
+}
+
+void MainWindow::on_rBtnCurDir_clicked()
+{
+    QString inputDir = ui->edInputDir->text();
+    if( inputDir.isEmpty() ){
+        QMessageBox::information(this, "输出目录", "请先选择要处理的目录");
+        ui->rBtnCurDir->setChecked(false);
+        return;
+    }
+
+    ui->edOutputDir->setText(inputDir);
+    ui->plainTextEdit->appendPlainText("输出目录:" + inputDir);
 }
 
 void MainWindow::on_btnInputDir_clicked()
 {
-    QString curPath = QDir::currentPath();
+    QString curPath = load_last_dir();
+    if(curPath.isEmpty())
+        curPath = QDir::currentPath();
     QString dir = QFileDialog::getExistingDirectory(this, tr("选择要处理的照片目录"),
                                                      curPath,
                                                      QFileDialog::ShowDirsOnly
                                                      | QFileDialog::DontResolveSymlinks);
     ui->edInputDir->setText(dir);
     ui->plainTextEdit->appendPlainText("选择目录:" +dir);
+    save_last_dir(dir);
 }
 
 void MainWindow::on_btnOutputDir_clicked()
@@ -72,7 +110,13 @@ bool MainWindow::scaled_image(QString &source, QString &dest, QSize size)
     }
 
     // TODO: 图片转换又三种模式，缩放，保持最大高，保持最大宽
-    QImage dest_img = source_img.scaled( size, Qt::IgnoreAspectRatio);
+    QImage dest_img;
+    // BUG: 源图片尺寸小于要输出的尺寸时会有白边
+    if( source_img.width() < size.width() ){
+        dest_img = source_img.scaled( size, Qt::KeepAspectRatioByExpanding);
+    } else {
+        dest_img = source_img.scaled( size, Qt::IgnoreAspectRatio);
+    }
     if(dest_img.isNull()){
         ui->plainTextEdit->appendPlainText("图片转换出错:" + source);
         return false;
@@ -151,3 +195,4 @@ void MainWindow::on_btnStart_clicked()
     lab_status_->setText(QString("处理完成！成功：%1个,失败：%2个").
                                  arg(success_).arg(error_));
 }
+

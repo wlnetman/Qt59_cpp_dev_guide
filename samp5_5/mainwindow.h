@@ -8,6 +8,7 @@
 #include <QSize>
 #include <QDir>
 #include <QFileInfo>
+#include <QSettings>
 
 namespace Ui {
 class MainWindow;
@@ -22,8 +23,6 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_rbtn1200_clicked();
-
     void on_rbtn800_clicked();
 
     void on_rbtn400_clicked();
@@ -34,9 +33,12 @@ private slots:
 
     void on_btnStart_clicked();
 
+    void on_rBtnCurDir_clicked();
+
 private:
     Ui::MainWindow *ui;
 
+    QSettings *settings_;
     QLabel* lab_status_;
     QString input_dir_;
     QString output_dir_;
@@ -48,6 +50,9 @@ private:
     bool scaled_image(QString& source, QString& dest, QSize size);
 
     QString getDestNameFromSource(QString& filename, QSize size);
+
+    QString load_last_dir();
+    void save_last_dir(const QString &path);
 };
 
 #endif // MAINWINDOW_H

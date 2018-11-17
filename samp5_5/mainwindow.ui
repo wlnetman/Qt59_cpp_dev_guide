@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>890</width>
-    <height>622</height>
+    <width>826</width>
+    <height>531</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -27,6 +27,9 @@
        <layout class="QVBoxLayout" name="verticalLayout">
         <item>
          <layout class="QGridLayout" name="gridLayout">
+          <item row="0" column="1">
+           <widget class="QLineEdit" name="edInputDir"/>
+          </item>
           <item row="0" column="0">
            <widget class="QPushButton" name="btnInputDir">
             <property name="text">
@@ -34,16 +37,20 @@
             </property>
            </widget>
           </item>
-          <item row="0" column="1">
-           <widget class="QLineEdit" name="edInputDir"/>
-          </item>
-          <item row="1" column="1">
+          <item row="2" column="1">
            <widget class="QLineEdit" name="edOutputDir"/>
           </item>
-          <item row="1" column="0">
+          <item row="2" column="0">
            <widget class="QPushButton" name="btnOutputDir">
             <property name="text">
              <string>输出目录</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QRadioButton" name="rBtnCurDir">
+            <property name="text">
+             <string>输出到当前目录下</string>
             </property>
            </widget>
           </item>
@@ -89,7 +96,7 @@
              </size>
             </property>
             <property name="text">
-             <string>800</string>
+             <string>750</string>
             </property>
            </widget>
           </item>
@@ -115,7 +122,7 @@
              </size>
             </property>
             <property name="text">
-             <string>600</string>
+             <string>750</string>
             </property>
            </widget>
           </item>
@@ -137,23 +144,16 @@
            </spacer>
           </item>
           <item>
-           <widget class="QRadioButton" name="rbtn1200">
-            <property name="text">
-             <string>1200x900</string>
-            </property>
-           </widget>
-          </item>
-          <item>
            <widget class="QRadioButton" name="rbtn800">
             <property name="text">
-             <string>800x600</string>
+             <string>1024x1024</string>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QRadioButton" name="rbtn400">
             <property name="text">
-             <string>400x300</string>
+             <string>750x750</string>
             </property>
            </widget>
           </item>
@@ -185,16 +185,6 @@
      </widget>
     </item>
    </layout>
-  </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>890</width>
-     <height>26</height>
-    </rect>
-   </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>

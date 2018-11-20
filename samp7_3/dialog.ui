@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>720</width>
+    <height>539</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout_5">
+   <item>
+    <widget class="QSplitter" name="splitter">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <widget class="QToolBox" name="toolBox">
+      <property name="currentIndex">
+       <number>2</number>
+      </property>
+      <widget class="QWidget" name="page">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>371</width>
+         <height>337</height>
+        </rect>
+       </property>
+       <attribute name="label">
+        <string>QCoreApplication类</string>
+       </attribute>
+      </widget>
+      <widget class="QWidget" name="page_2">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>371</width>
+         <height>337</height>
+        </rect>
+       </property>
+       <attribute name="label">
+        <string>QFile类</string>
+       </attribute>
+      </widget>
+      <widget class="QWidget" name="page_3">
+       <attribute name="label">
+        <string>QFileInfo类</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <widget class="QGroupBox" name="groupBox_2">
+          <property name="title">
+           <string>文件信息</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_4">
+           <item>
+            <layout class="QGridLayout" name="gridLayout">
+             <item row="2" column="0">
+              <widget class="QPushButton" name="pushButton_8">
+               <property name="text">
+                <string>baseName()</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="0">
+              <widget class="QPushButton" name="pushButton_9">
+               <property name="text">
+                <string>suffix()</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QPushButton" name="pushButton_5">
+               <property name="text">
+                <string>fileName()</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QPushButton" name="pushButton_6">
+               <property name="text">
+                <string>absolutePath</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="0">
+              <widget class="QPushButton" name="pushButton_4">
+               <property name="text">
+                <string>absoluteFilePath()</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QPushButton" name="pushButton_7">
+               <property name="text">
+                <string>filePath()</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="0">
+              <widget class="QPushButton" name="pushButton_10">
+               <property name="text">
+                <string>isDir()</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QPushButton" name="pushButton_11">
+               <property name="text">
+                <string>path()</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="1">
+              <widget class="QPushButton" name="pushButton_12">
+               <property name="text">
+                <string>compleeSuffix</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="1">
+              <widget class="QPushButton" name="pushButton_13">
+               <property name="text">
+                <string>ifFile()</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="page_4">
+       <attribute name="label">
+        <string>QDir类</string>
+       </attribute>
+      </widget>
+      <widget class="QWidget" name="page_5">
+       <attribute name="label">
+        <string>QTemporaryDir类</string>
+       </attribute>
+      </widget>
+      <widget class="QWidget" name="page_6">
+       <attribute name="label">
+        <string>QFileSystemWatch类</string>
+       </attribute>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="groupBox">
+      <property name="title">
+       <string/>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout">
+           <item>
+            <widget class="QPushButton" name="pushButton">
+             <property name="text">
+              <string>打开文件</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="pushButton_2">
+             <property name="text">
+              <string>打开目录</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="pushButton_3">
+             <property name="text">
+              <string>清除对话框</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <item>
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>文件</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="lineEdit"/>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_3">
+           <item>
+            <widget class="QLabel" name="label_2">
+             <property name="text">
+              <string>目录</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="lineEdit_2"/>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <item>
+          <widget class="QLabel" name="label_3">
+           <property name="text">
+            <string>信息</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QTextEdit" name="textEdit"/>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>720</width>
-    <height>539</height>
+    <width>914</width>
+    <height>550</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -28,8 +28,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>371</width>
-         <height>337</height>
+         <width>443</width>
+         <height>348</height>
         </rect>
        </property>
        <attribute name="label">
@@ -41,8 +41,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>371</width>
-         <height>337</height>
+         <width>443</width>
+         <height>348</height>
         </rect>
        </property>
        <attribute name="label">
@@ -50,6 +50,14 @@
        </attribute>
       </widget>
       <widget class="QWidget" name="page_3">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>443</width>
+         <height>348</height>
+        </rect>
+       </property>
        <attribute name="label">
         <string>QFileInfo类</string>
        </attribute>
@@ -140,16 +148,40 @@
        </layout>
       </widget>
       <widget class="QWidget" name="page_4">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>443</width>
+         <height>348</height>
+        </rect>
+       </property>
        <attribute name="label">
         <string>QDir类</string>
        </attribute>
       </widget>
       <widget class="QWidget" name="page_5">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>443</width>
+         <height>348</height>
+        </rect>
+       </property>
        <attribute name="label">
         <string>QTemporaryDir类</string>
        </attribute>
       </widget>
       <widget class="QWidget" name="page_6">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>443</width>
+         <height>348</height>
+        </rect>
+       </property>
        <attribute name="label">
         <string>QFileSystemWatch类</string>
        </attribute>
@@ -172,14 +204,14 @@
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="pushButton_2">
+            <widget class="QPushButton" name="btnDir">
              <property name="text">
               <string>打开目录</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="pushButton_3">
+            <widget class="QPushButton" name="btnClear">
              <property name="text">
               <string>清除对话框</string>
              </property>
@@ -197,7 +229,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="lineEdit"/>
+            <widget class="QLineEdit" name="edFile"/>
            </item>
           </layout>
          </item>
@@ -211,7 +243,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="lineEdit_2"/>
+            <widget class="QLineEdit" name="edDir"/>
            </item>
           </layout>
          </item>

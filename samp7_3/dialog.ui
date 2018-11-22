@@ -71,7 +71,7 @@
            <item>
             <layout class="QGridLayout" name="gridLayout">
              <item row="2" column="0">
-              <widget class="QPushButton" name="pushButton_8">
+              <widget class="QPushButton" name="btnBaseName">
                <property name="text">
                 <string>baseName()</string>
                </property>
@@ -99,7 +99,7 @@
               </widget>
              </item>
              <item row="0" column="0">
-              <widget class="QPushButton" name="pushButton_4">
+              <widget class="QPushButton" name="btnAbsoluteFile">
                <property name="text">
                 <string>absoluteFilePath()</string>
                </property>
@@ -270,5 +270,22 @@
   </layout>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>btnClear</sender>
+   <signal>clicked()</signal>
+   <receiver>textEdit</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>821</x>
+     <y>38</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>699</x>
+     <y>324</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

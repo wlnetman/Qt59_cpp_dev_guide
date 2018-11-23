@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>914</width>
-    <height>550</height>
+    <width>1000</width>
+    <height>523</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -21,7 +21,7 @@
      </property>
      <widget class="QToolBox" name="toolBox">
       <property name="currentIndex">
-       <number>2</number>
+       <number>5</number>
       </property>
       <widget class="QWidget" name="page">
        <property name="geometry">
@@ -35,6 +35,47 @@
        <attribute name="label">
         <string>QCoreApplication类</string>
        </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_6">
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_5">
+          <item>
+           <widget class="QPushButton" name="pushButton_2">
+            <property name="text">
+             <string>applicationDirPath</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_3">
+            <property name="text">
+             <string>applicationFilePath</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_4">
+            <property name="text">
+             <string>libraryPaths</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_8">
+            <property name="text">
+             <string>setOrganizationName</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_14">
+            <property name="text">
+             <string>exit()</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
       </widget>
       <widget class="QWidget" name="page_2">
        <property name="geometry">
@@ -48,6 +89,22 @@
        <attribute name="label">
         <string>QFile类</string>
        </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_7">
+        <item>
+         <widget class="QPushButton" name="pushButton_15">
+          <property name="text">
+           <string>exists</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_16">
+          <property name="text">
+           <string>size()</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </widget>
       <widget class="QWidget" name="page_3">
        <property name="geometry">
@@ -129,7 +186,7 @@
              <item row="3" column="1">
               <widget class="QPushButton" name="pushButton_12">
                <property name="text">
-                <string>compleeSuffix</string>
+                <string>compleeSuffix()</string>
                </property>
               </widget>
              </item>
@@ -178,13 +235,47 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>443</width>
-         <height>348</height>
+         <width>486</width>
+         <height>321</height>
         </rect>
        </property>
        <attribute name="label">
         <string>QFileSystemWatch类</string>
        </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_9">
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_8">
+          <item>
+           <widget class="QPushButton" name="pushButton_17">
+            <property name="text">
+             <string>addPath()开始监听</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_18">
+            <property name="text">
+             <string>removePath()停止监听</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_19">
+            <property name="text">
+             <string>directories()</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_20">
+            <property name="text">
+             <string>files()</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
       </widget>
      </widget>
      <widget class="QGroupBox" name="groupBox">

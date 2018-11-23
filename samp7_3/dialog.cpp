@@ -16,7 +16,19 @@ Dialog::~Dialog()
 void Dialog::showButtonTitle()
 {
     QPushButton *pbt = static_cast<QPushButton*>(sender());
-    ui->textEdit->append(pbt->text());
+    ui->textEdit->append("\n" + pbt->text());
+}
+
+void Dialog::on_directoryChanged(const QString path)
+{
+    ui->textEdit->append(path);
+    ui->textEdit->append("目录发生了变化\n");
+}
+
+void Dialog::on_fileChanged(const QString path)
+{
+    ui->textEdit->append(path);
+    ui->textEdit->append("文件发生了变化\n");
 }
 
 void Dialog::on_pushButton_clicked()
@@ -86,4 +98,113 @@ void Dialog::on_pushButton_11_clicked()
 
     QFileInfo info(ui->edFile->text());
     ui->textEdit->append(info.path());
+}
+
+void Dialog::on_pushButton_9_clicked()
+{
+    showButtonTitle();
+
+    QFileInfo info(ui->edFile->text());
+    ui->textEdit->append(info.suffix());
+}
+
+void Dialog::on_pushButton_10_clicked()
+{
+    showButtonTitle();
+
+    QFileInfo info(ui->edFile->text());
+    ui->textEdit->append(info.isDir()?"TRUE":"FALSE");
+}
+
+void Dialog::on_pushButton_12_clicked()
+{
+    showButtonTitle();
+
+    QFileInfo info(ui->edFile->text());
+    ui->textEdit->append(info.completeSuffix());
+}
+
+void Dialog::on_pushButton_2_clicked()
+{
+    showButtonTitle();
+
+    QString str = QApplication::applicationDirPath();
+    ui->textEdit->append(str);
+}
+
+void Dialog::on_pushButton_3_clicked()
+{
+    showButtonTitle();
+
+    QString str = QApplication::applicationFilePath();
+    ui->textEdit->append(str);
+}
+
+void Dialog::on_pushButton_4_clicked()
+{
+    showButtonTitle();
+
+    QStringList strlist = QApplication::libraryPaths();
+    foreach(QString str, strlist)
+        ui->textEdit->append(str);
+}
+
+void Dialog::on_pushButton_14_clicked()
+{
+    showButtonTitle();
+
+    QApplication::exit();
+}
+
+void Dialog::on_pushButton_8_clicked()
+{
+    showButtonTitle();
+
+    QApplication::setOrganizationName("Dashi");
+    QString str = QApplication::organizationName();
+    ui->textEdit->append(str);
+}
+
+void Dialog::on_pushButton_15_clicked()
+{
+    showButtonTitle();
+
+    QFile f(ui->edFile->text());
+    ui->textEdit->append(f.exists()?"EXISTS" :"Not EXISTES");
+}
+
+void Dialog::on_pushButton_16_clicked()
+{
+    showButtonTitle();
+
+    QFile f(ui->edFile->text());
+    ui->textEdit->append(QString::number(f.size()));
+}
+
+void Dialog::on_pushButton_17_clicked()
+{
+    showButtonTitle();
+
+    ui->textEdit->append("监听目录 :" + ui->edDir->text() + "\n");
+    watcher_.addPath(ui->edDir->text());
+    watcher_.addPath(ui->edFile->text());
+
+    connect(&watcher_, &QFileSystemWatcher::directoryChanged,
+            this, &Dialog::on_directoryChanged);
+    connect(&watcher_, &QFileSystemWatcher::fileChanged,
+            this, &Dialog::on_fileChanged);
+}
+
+void Dialog::on_pushButton_18_clicked()
+{
+    showButtonTitle();
+
+    ui->textEdit->append("监听目录 :" + ui->edDir->text() + "\n");
+    watcher_.removePath(ui->edDir->text());
+    watcher_.removePath(ui->edFile->text());
+
+    disconnect(&watcher_, &QFileSystemWatcher::directoryChanged,
+            this, &Dialog::on_directoryChanged);
+    disconnect(&watcher_, &QFileSystemWatcher::fileChanged,
+            this, &Dialog::on_fileChanged);
 }

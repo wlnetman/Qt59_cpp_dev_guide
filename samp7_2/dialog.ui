@@ -21,17 +21,17 @@
      </property>
      <widget class="QWidget" name="tab">
       <attribute name="title">
-       <string>Tab 1</string>
+       <string>1分钟</string>
       </attribute>
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
-        <widget class="QTableView" name="tableView"/>
+        <widget class="QTableView" name="tbview_1m"/>
        </item>
       </layout>
      </widget>
      <widget class="QWidget" name="tab_2">
       <attribute name="title">
-       <string>Tab 2</string>
+       <string>15分钟</string>
       </attribute>
      </widget>
     </widget>

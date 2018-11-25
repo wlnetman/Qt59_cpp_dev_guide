@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>images/1min.png</file>
+        <file>images/15min.png</file>
+        <file>images/60m.png</file>
+        <file>images/日.png</file>
+        <file>images/tick.ico</file>
+    </qresource>
+</RCC>

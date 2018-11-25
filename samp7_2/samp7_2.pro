@@ -30,12 +30,15 @@ CONFIG += c++11
 RC_ICONS = AppIco.ico
 
 SOURCES += main.cpp \
-    dialog.cpp
+    mainwindow.cpp
 
 FORMS += \
-    dialog.ui
+    mainwindow.ui
 
 HEADERS += \
-    dialog.h
+    mainwindow.h
+
+RESOURCES += \
+    res.qrc
 
 

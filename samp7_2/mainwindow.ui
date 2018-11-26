@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>937</width>
+    <height>662</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,7 +16,26 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
-     <widget class="QTableView" name="tableView"/>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>Tab 1</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QTableView" name="tableView"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_2">
+       <attribute name="title">
+        <string>Tab 2</string>
+       </attribute>
+      </widget>
+     </widget>
     </item>
    </layout>
   </widget>
@@ -25,7 +44,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>937</width>
      <height>26</height>
     </rect>
    </property>
@@ -48,6 +67,9 @@
    <addaction name="act1min"/>
    <addaction name="act15min"/>
    <addaction name="act60min"/>
+   <addaction name="separator"/>
+   <addaction name="actOpen"/>
+   <addaction name="actExit"/>
   </widget>
   <action name="act1min">
    <property name="icon">
@@ -97,9 +119,51 @@
     <string>显示Tick</string>
    </property>
   </action>
+  <action name="actOpen">
+   <property name="icon">
+    <iconset resource="../samp7_1/res.qrc">
+     <normaloff>:/images/images/7_1.png</normaloff>:/images/images/7_1.png</iconset>
+   </property>
+   <property name="text">
+    <string>打开文件</string>
+   </property>
+   <property name="toolTip">
+    <string>打开文件</string>
+   </property>
+  </action>
+  <action name="actExit">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/images/images/7_2_quit.png</normaloff>:/images/images/7_2_quit.png</iconset>
+   </property>
+   <property name="text">
+    <string>退出</string>
+   </property>
+   <property name="toolTip">
+    <string>退出</string>
+   </property>
+  </action>
  </widget>
  <resources>
+  <include location="../samp7_1/res.qrc"/>
   <include location="res.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>actExit</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>468</x>
+     <y>330</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

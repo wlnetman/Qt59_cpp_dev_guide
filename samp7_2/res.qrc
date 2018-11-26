@@ -5,5 +5,7 @@
         <file>images/60m.png</file>
         <file>images/日.png</file>
         <file>images/tick.ico</file>
+        <file>images/7_2_quit.png</file>
+        <file>images/7_2_save.png</file>
     </qresource>
 </RCC>

@@ -27,6 +27,7 @@ private:
     void texturePaint();
     void spreadPaint();
 
+    void customPaint();
 private:
     Ui::Widget *ui;
 };

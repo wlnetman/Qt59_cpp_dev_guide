@@ -55,9 +55,9 @@ void Widget::texturePaint()
     pen.setStyle(Qt::SolidLine);
     painter.setPen(pen);
 
-    QPixmap texturePixmap(":images/images/timg.jpg");
+    QPixmap texturePixmap(":/images/images/timg.jpg");
     QBrush brush;
-    brush.setStyle(Qt::SolidPattern);
+    brush.setStyle(Qt::TexturePattern);
     brush.setTexture(texturePixmap);
     painter.setBrush(brush);
     painter.drawRect(rect);
@@ -80,13 +80,20 @@ void Widget::spreadPaint()
     painter.drawRect(this->rect());
 }
 
+void Widget::customPaint()
+{
+
+}
+
 void Widget::paintEvent(QPaintEvent *event)
 {
     Q_UNUSED(event);
 
-    nomualPaint();
+//    spreadPaint();
 
-    texturePaint();
+//    nomualPaint();
 
-    //spreadPaint();
+//    texturePaint();
+
+    customPaint();
 }

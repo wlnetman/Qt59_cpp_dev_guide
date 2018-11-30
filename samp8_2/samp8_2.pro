@@ -30,6 +30,13 @@ CONFIG += c++11
 
 RC_ICONS = AppIco.ico
 
-SOURCES += main.cpp
+SOURCES += main.cpp \
+    widget.cpp
+
+FORMS += \
+    widget.ui
+
+HEADERS += \
+    widget.h
 
 

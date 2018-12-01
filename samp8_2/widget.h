@@ -19,7 +19,9 @@ public:
     ~Widget();
 
 private:
-    void PaintEvent(QPaintEvent* event);
+    void paintEvent(QPaintEvent* event);
+
+    void base_paint();
 
 private:
     Ui::Widget *ui;

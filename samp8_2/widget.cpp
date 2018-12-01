@@ -8,7 +8,7 @@ Widget::Widget(QWidget *parent) :
     ui->setupUi(this);
     setPalette(QPalette(Qt::white));
     setAutoFillBackground(true);
-    resize(600,300);
+    resize(1024,768);
 }
 
 Widget::~Widget()
@@ -16,30 +16,32 @@ Widget::~Widget()
     delete ui;
 }
 
-void Widget::PaintEvent(QPaintEvent *event)
+void Widget::paintEvent(QPaintEvent *event)
 {
     Q_UNUSED(event);
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing);
     painter.setRenderHint(QPainter::TextAntialiasing);
 
-    qreal R = 100;
-    const qreal  pi = 3.141592653589;
+    const qreal  pi = 3.1415;
+    qreal R = 100.00;
     qreal deg = pi*72/180;
-    QPoint points[5] = {
-        QPoint(R,0),
-        QPoint(R*std::cos(deg), -R*std::sin(deg)),
-        QPoint(R*std::cos(2*deg), -R*std::sin(2*deg)),
-        QPoint(R*std::cos(3*deg), -R*std::sin(3*deg)),
-        QPoint(R*std::cos(4*deg), -R*std::sin(4*deg))
+    QPointF points[5] = {
+        QPointF(R,0),
+        QPointF(R*std::cos(deg), -R*std::sin(deg)),
+        QPointF(R*std::cos(2*deg), -R*std::sin(2*deg)),
+        QPointF(R*std::cos(3*deg), -R*std::sin(3*deg)),
+        QPointF(R*std::cos(4*deg), -R*std::sin(4*deg))
     };
     QFont font;
     font.setPointSize(12);
     font.setBold(true);
     painter.setFont(font);
+
     QPen penLine;
     penLine.setWidth(2);
-    penLine.setColor(Qt::blue);
+    penLine.setColor(Qt::red);
+    penLine.setStyle(Qt::SolidLine);
     penLine.setCapStyle(Qt::FlatCap);
     penLine.setJoinStyle(Qt::BevelJoin);
     painter.setPen(penLine);
@@ -63,14 +65,14 @@ void Widget::PaintEvent(QPaintEvent *event)
     starPath.addText(points[4], font, "4");
 
     painter.save();
-    painter.translate(100, 120);
+    painter.translate(100, 200);
     painter.drawPath(starPath);
     painter.drawText(0, 0, "S1");
     painter.restore();
 
     painter.translate(300, 120);
-    painter.scale(0.8, 0.8);
-    painter.rotate(90);
+    painter.scale(0.5, 0.5);
+    painter.rotate(45);
     painter.drawPath(starPath);
     painter.drawText(0, 0, "S2");
 
@@ -79,4 +81,33 @@ void Widget::PaintEvent(QPaintEvent *event)
     painter.rotate(-145);
     painter.drawPath(starPath);
     painter.drawText(0, 0, "S3");
+
+    base_paint();
+}
+
+void Widget::base_paint()
+{
+    QPainter painter(this);
+    int W = this->width();
+    int H = this->height();
+    QRect rect(W/4, H/4, W/2, H/2);
+    QPainterPath path;
+    path.addEllipse(rect);
+    path.addRect(rect);
+    painter.fillPath(path, Qt::green);
+
+    QRect rect2(W/8, H/8, W/4, H/4);
+    //painter.fillRect(rect2, Qt::red);
+
+    painter.resetTransform();
+    painter.translate(100, 400);
+    QRect rect3(W/5, H/5, W/2, H/2);
+    int startAngle = 90*16;
+    int spanAngle = 90*16;
+    painter.drawArc(rect3, startAngle, spanAngle);
+    rect3.moveLeft(30);
+    painter.drawChord(rect3, startAngle, spanAngle);
+
+    rect3.moveLeft(30);
+    painter.drawEllipse(rect3);
 }

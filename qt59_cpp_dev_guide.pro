@@ -32,4 +32,5 @@ SUBDIRS = samp1 \
     samp7_3 \
     samp7_4 \
     samp8_1 \
-    samp8_2
+    samp8_2 \
+    samp8_3

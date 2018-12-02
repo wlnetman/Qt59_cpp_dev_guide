@@ -2,11 +2,8 @@
 #define WIDGET_H
 
 #include <QWidget>
-#include <QPaintEvent>
-#include <QPalette>
 #include <QPainter>
-#include <QImage>
-#include <QLine>
+#include <QPaintEvent>
 
 namespace Ui {
 class Widget;
@@ -21,9 +18,9 @@ public:
     ~Widget();
 
 private:
-    void paintEvent(QPaintEvent* event);
-
-    void base_paint();
+    void paintEvent(QPaintEvent *event);
+    void paintComposition();
+    void paintComposition2();
 
 private:
     Ui::Widget *ui;

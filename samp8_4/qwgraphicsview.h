@@ -9,26 +9,20 @@ namespace Ui {
 class QWGraphicsView;
 }
 
-class QWGraphicsView : public QMainWindow
-        ,public QGraphicsView
+class QWGraphicsView :public QGraphicsView
 {
     Q_OBJECT
 
 public:
-    explicit QWGraphicsView(QWidget *parent = nullptr);
-    ~QWGraphicsView();
+    QWGraphicsView(QWidget *parent = nullptr);
 
 protected:
     void mouseMoveEvent(QMouseEvent *event);
     void mousePressEvent(QMouseEvent* event);
 
-private:
-    Ui::QWGraphicsView *ui;
-
 signals:
     void mouseMovePoint(QPoint point);
     void mouseClicked(QPoint point);
-
 };
 
 #endif // QWGRAPHICSVIEW_H

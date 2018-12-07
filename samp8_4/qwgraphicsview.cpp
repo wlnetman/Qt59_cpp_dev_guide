@@ -1,16 +1,8 @@
 #include "qwgraphicsview.h"
-#include "ui_qwgraphicsview.h"
 
-QWGraphicsView::QWGraphicsView(QWidget *parent) :
-    QMainWindow(parent),
-    ui(new Ui::QWGraphicsView)
+QWGraphicsView::QWGraphicsView(QWidget *parent)
 {
-    ui->setupUi(this);
-}
-
-QWGraphicsView::~QWGraphicsView()
-{
-    delete ui;
+    Q_UNUSED(parent);
 }
 
 void QWGraphicsView::mouseMoveEvent(QMouseEvent *event)

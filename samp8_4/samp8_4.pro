@@ -30,12 +30,14 @@ CONFIG += c++11
 RC_ICONS = AppIco.ico
 
 SOURCES += main.cpp \
-    qwgraphicsview.cpp
+    qwgraphicsview.cpp \
+    mainwindow.cpp
 
 FORMS += \
-    qwgraphicsview.ui
+    mainwindow.ui
 
 HEADERS += \
-    qwgraphicsview.h
+    qwgraphicsview.h \
+    mainwindow.h
 
 
